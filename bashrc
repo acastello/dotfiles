@@ -85,4 +85,8 @@ alias i3exit='i3-msg exit'
 alias aurman='aurman --noconfirm'
 alias ffmpeg='ffmpeg -hide_banner'
 
+# workspace aliases
+alias .w='cd "$WORKSPACE"'
+alias .g='cd "$WORKSPACE/golang/src/rs.daimler.com"'
+
 # vim: tw=0
