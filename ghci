@@ -1,0 +1,18 @@
+-- import qualified Control.Monad.State as SM
+-- import qualified Control.Monad.Trans as TM
+--
+-- import qualified Data.List as L
+-- import qualified Data.Tree as T
+-- import qualified Data.Map as M
+-- import qualified Data.IntMap as I
+
+:set -Wall
+:set -Wno-unused-do-bind
+:set -Wno-unused-imports
+:set -Wno-type-defaults
+:set -XOverloadedStrings
+:set -XArrows
+:set +t
+:set +m
+:set prompt "\ESC[1;37m\STX%s> \ESC[m\STX"
+

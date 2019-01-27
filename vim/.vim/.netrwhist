@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/alex/grapefruit/grapefruit-ui/src/Graphics'
+let g:netrw_dirhist_2='/home/alex/.config/kitty'
+let g:netrw_dirhist_3='/home/alex/.mlterm'
+let g:netrw_dirhist_4='/home/alex/.local/share/konsole'
