@@ -1,0 +1,111 @@
+! Xft.dpi: 9000
+Xft.autohint: 0
+Xft.lcdfilter: lcdlight
+Xft.hintstyle: hintslight
+Xft.hinting: 0
+Xft.antialias: 1
+Xft.rgba: rgb
+
+Xcursor.size: 32
+
+! terminal font --------------------------------------------------------------
+*font: xft: Inconsoliga: pixelsize=15px: antialas=true
+
+! terminal colors ------------------------------------------------------------
+! --- generated with 4bit Terminal Color Scheme Designer
+! --- http://ciembor.github.com/4bit
+! ------------------------------------------------------------------------------
+
+! --- special colors ---
+
+! *background: #2f3539
+URxvt*background: [92]#272D30
+*background: #272D30
+*foreground: #b0b1b0
+
+! --- standard colors ---
+
+! black
+*color0: #202020
+
+! bright_black
+*color8: #353535
+
+! red
+*color1: #cd5c63
+
+! bright_red
+*color9: #d26b72
+
+! green
+*color2: #63cd5c
+
+! bright_green
+*color10: #72d26b
+
+! yellow
+*color3: #cdc55c
+
+! bright_yellow
+*color11: #d2cb6b
+
+! blue
+*color4: #5c63cd
+
+! bright_blue
+*color12: #6b72d2
+
+! magenta
+*color5: #c55ccd
+
+! bright_magenta
+*color13: #cb6bd2
+
+! cyan
+*color6: #5ccdc5
+
+! bright_cyan
+*color14: #6bd2cb
+
+! white
+*color7: #e6e6e6
+
+! bright_white
+*color15: #ffffff
+
+
+! URxvt settings  --------------------------------------------------------------
+! URxvt*termName: rxvt
+URxvt.perl-ext-common:  resize-font
+URxvt.fading:		0
+URxvt*skipBuiltinGlyphs:    true
+
+*Rxvt.saveLines:	    4096
+URxvt.cursorColor2:     #000000
+URxvt.colorBD:          #ffffff
+URxvt.colorIT:          #bbbbbb
+URxvt.colorUL:          #999999
+URxvt.underlineColor:   #999999
+
+! Blur background
+! URxvt*fading:       50
+
+URxvt.secondaryScreen:  1
+URxvt.secondaryScroll:  0
+URxvt.secondaryWheel:   1
+
+! Skip scrolling too many lines
+URxvt*skipScroll:       true
+
+URxvt.depth: 32
+! URxvt*background: rgba:
+URxvt.scrollBar: false
+! URxvt.font: xft: Inconsoliga: pixelsize=15px: antialas=true
+URxvt.font: xft: Inconsoliga: pixelsize=15px: antialas=true
+URxvt.boldFont: xft: Inconsoliga: bold: pixelsize=15px: antialas=true
+! URxvt.font: xft: Inconsolata: pixelsize=15px: antialas=true
+
+URxvt.urlLauncher: xdg-open
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+URxvt*resize-font.show: C-slash

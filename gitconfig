@@ -1,0 +1,40 @@
+[user]
+	email = alejandro.castello@freiheit.com
+	name = alejandro.castello
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    br = branch
+    serve = daemon --reuseaddr --verbose  --base-path=. --verbose --export-all ./.git
+    fixup = !sh -c 'REV=$(git rev-parse $1) && git commit --fixup $@ && git rebase -i --autosquash $REV^' -
+    squash = !sh -c 'REV=$(git rev-parse $1) && git commit --squash $@ && git rebase -i --autosquash $REV^' -
+    push-review = "!git push origin HEAD:alejandro.castello && git checkout alejandro.castello"
+    purr = pull --rebase
+    branch-name = rev-parse --abbrev-ref HEAD
+    publish = "!git push -u origin $(git branch-name)"
+    please = "!git push --force-with-lease origin $(git branch-name)"
+    pls = "!git please"
+    ls = log --graph --abbrev-commit --oneline
+    camend = commit --amend --no-edit
+    my-notes = !$EDITOR "$(git rev-parse --show-toplevel | sed 's \\(.*\\)/ \\1/.notes. ')"/notes
+    # notes = "!git -C .notes."$(git rev-parse --show-toplevel)"
+
+
+[core]
+    editor = vim
+	pager = less -+FX
+[push]
+    default = tracking
+[merge]
+    tool = kdiff3
+[diff]
+    tool = meld
+[rebase]
+    autostash = true
+[pull]
+    rebase = true
