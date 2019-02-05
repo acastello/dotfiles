@@ -23,7 +23,7 @@ nothing =   """
                 }
             }
             n.length
-            """ 
+            """
 
 xress = read_xresources('*')
 
@@ -33,12 +33,13 @@ c.url.searchengines['w'] = "https://en.wikipedia.org/w/index.php?search={}"
 c.url.searchengines['i'] = "https://infogalactic.com/info/{}"
 c.url.searchengines['aw'] = "https://wiki.archlinux.org/index.php?search={}&title=Special%3ASearch&go=Go"
 c.url.searchengines['g'] = "https://github.com/search?utf8=%E2%9C%93&q={}"
+c.url.searchengines['goes'] = "https://golang.org/search?q={}"
 c.url.searchengines['4'] = "http://boards.4chan.org/{}"
-c.hints.chars = "1234qwerasdfzx"
+c.hints.chars = "1234QWERASDFZXC"
 c.keyhint.delay = 200
-c.tabs.padding["top"] = 2
-c.tabs.padding["bottom"] = 2
-c.fonts.hints = "10px monospace"
+c.tabs.padding['top'] = 2
+c.tabs.padding['bottom'] = 2
+c.fonts.hints = "11px monospace"
 c.fonts.tabs = "12px monospace"
 
 c.colors.completion.fg = xress['*foreground']
@@ -62,5 +63,17 @@ c.colors.tabs.selected.even.fg = xress['*foreground']
 c.colors.webpage.bg = xress['*color7']
 
 # config.bind('gr', 'move-to-start-of-document ;; reload')
-config.bind(',', 'scroll-page 0 0.35')
-config.bind('l', 'jseval ' + nothing.replace('\n',';'))
+config.bind('`',                    'tab-focus')
+config.bind('~',                    'tab-focus -1')
+config.bind('<Ctrl-1>',             'tab-focus 1')
+config.bind('<Ctrl-2>',             'tab-focus 2')
+config.bind('<Ctrl-3>',             'tab-focus 3')
+config.bind('<Ctrl-4>',             'tab-focus 4')
+config.bind('<Ctrl-5>',             'tab-focus 5')
+config.bind('<Ctrl-6>',             'tab-focus 6')
+config.bind('<Ctrl-7>',             'tab-focus 7')
+config.bind('<Ctrl-8>',             'tab-focus 8')
+config.bind('<Ctrl-9>',             'tab-focus -n -1')
+config.bind('Shift+PgDown',    'tab-move -')
+config.bind(',',                    'scroll-page 0 0.35')
+config.bind('l',                    'jseval ' + nothing.replace('\n',';'))
