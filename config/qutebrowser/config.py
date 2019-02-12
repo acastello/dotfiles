@@ -29,12 +29,12 @@ xress = read_xresources('*')
 
 c.backend = 'webengine'
 c.downloads.remove_finished = 1500
-c.url.searchengines['w'] = "https://en.wikipedia.org/w/index.php?search={}"
-c.url.searchengines['i'] = "https://infogalactic.com/info/{}"
-c.url.searchengines['aw'] = "https://wiki.archlinux.org/index.php?search={}&title=Special%3ASearch&go=Go"
-c.url.searchengines['g'] = "https://github.com/search?utf8=%E2%9C%93&q={}"
+c.url.searchengines['w'] =    "https://en.wikipedia.org/w/index.php?search={}"
+c.url.searchengines['i'] =    "https://infogalactic.com/info/{}"
+c.url.searchengines['aw'] =   "https://wiki.archlinux.org/index.php?search={}&title=Special%3ASearch&go=Go"
+c.url.searchengines['g'] =    "https://github.com/search?utf8=%E2%9C%93&q={}"
 c.url.searchengines['goes'] = "https://golang.org/search?q={}"
-c.url.searchengines['4'] = "http://boards.4chan.org/{}"
+c.url.searchengines['4'] =    "http://boards.4chan.org/{}"
 c.hints.chars = "1234QWERASDFZXC"
 c.keyhint.delay = 200
 c.tabs.padding['top'] = 2
@@ -62,9 +62,14 @@ c.colors.tabs.selected.odd.fg = \
 c.colors.tabs.selected.even.fg = xress['*foreground']
 c.colors.webpage.bg = xress['*color7']
 
-# config.bind('gr', 'move-to-start-of-document ;; reload')
+config.unbind('q')
+
 config.bind('`',                    'tab-focus')
 config.bind('~',                    'tab-focus -1')
+config.bind('q`',                   'tab-focus 5')
+config.bind('w`',                   'tab-focus 6')
+config.bind('e`',                   'tab-focus 7')
+config.bind('r`',                   'tab-focus 8')
 config.bind('<Ctrl-1>',             'tab-focus 1')
 config.bind('<Ctrl-2>',             'tab-focus 2')
 config.bind('<Ctrl-3>',             'tab-focus 3')
