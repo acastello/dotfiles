@@ -1,0 +1,17 @@
+[Desktop Entry]
+DefaultProfile=Profile 1.profile
+
+[Favorite Profiles]
+Favorites=
+
+[KonsoleWindow]
+SaveGeometryOnExit=false
+ShowMenuBarByDefault=false
+
+[MainWindow]
+State=AAAA/wAAAAD9AAAAAAAAAz4AAAVEAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+
+[TabBar]
+TabBarUseUserStyleSheet=true
+TabBarUserStyleSheetFile=file://home/acastello/.config/konsole.css
