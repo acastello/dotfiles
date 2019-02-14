@@ -1,25 +1,30 @@
 * {
-    font-family: monospace;
-    font-size: 15px;
+    color: red;
+    font: 15px monospace;
 }
 
 QWidget {
-    border-width: 0px;
-    border-style: none;
+    border-top: 2px solid #272D30;
     background-color: qlineargradient(x1: 0, y1: 1, x2: 0, y2: 0,
                                       stop: 0 #202020, stop: 0.75 #242728, stop: 1.0 #272D30);
 }
 
 QTabBar::tab {
+    margin-top: 2px;
+    padding: 1px;
     color: #B0B1B0;
-    height: 1.5em;
-    min-height: 1.5em;
-    max-height: 2.5em;
-    background: qlineargradient(x1: 0, y1: 0.5, x2: 1, y2: 0.8,
-                                stop: 0.75 #384145, stop: 1.0 #4F5C61);
+    height: 1.125em;
+    background: qradialgradient(cx: 1, cy: 2, fx: 1, fy: 2, radius: 2, spread: reflect,
+                                stop: 0.5 #202020, stop: 0.875 #242728, stop: 1.0 #272D30);
+
+/*    background: qlineargradient(x1: 0, y1: 1, x2: 0, y2: 0,
+                                stop: 0.75 #202020, stop: 1.0 #242728); */
 }
 
 QTabBar::tab:selected {
-    background: qlineargradient(x1: 0, y1: 0.5, x2: 1, y2: 0.8,
-                                stop: 0.75 #272D30, stop: 1.0 #384145);
+    padding: 1px;
+    background: qradialgradient(cx:0.5, cy: 0, radius: 1,
+                               stop: 0 #384145, stop: 1.0 #4F5C61);
+    /* background: qradialgradient(cx:0.5, cy: -0.5, fx: 0.5, fy: 0.8, radius: 2.06,
+                               stop: 0.5 blue, stop: 1.0 yellow, spread: pad); */
 }
