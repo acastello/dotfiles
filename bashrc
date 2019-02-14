@@ -15,7 +15,7 @@ bind '"\ec":        "\C-a# \C-e\n"'                 # CMD -> # CMD 	⏎
 bind '"\C-x&":      "\C-a(\C-e&)\n"'                # CMD -> (CMD &) # execute detached
 bind '"\C-b:":      "\C-awhile :; do \C-e ; done"'  # CMD -> while true ; do CMD ; done
 bind '"\C-be":      " $EDITOR ~/.bashrc\n"'          # vim ~/.bashrc
-bind '"\C-bhe":     " $EDITOR ~/.bash_history\n"'    # vim ~/.bash_history
+bind '"\C-bhe":     " $EDITOR ~/.bash_persistent_history\n"'    # vim ~/.bash_history
 bind '"\C-bhu":     " history -n\n"'
 bind '"\C-b.":      " . ~/.bashrc\n"'                # source ~/.bashrc
 # find
@@ -136,6 +136,7 @@ bind '"\e\C-\M-ts":   "\C-w--target kubernetes_secret._secret\e\e[D\e[D"'
 if [[ ";${PROMPT_COMMAND};" != *"'history -a;"* ]] ; then
     PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 fi
+HISTFILE="$HOME/.bash_persistent_history"
 HISTSIZE=
 HISTFILESIZE=
 HISTCONTROL=ignorespace
