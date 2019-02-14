@@ -12,18 +12,25 @@ QWidget {
 QTabBar::tab {
     margin-top: 2px;
     padding: 0px 0.5em 2px 0.5em;
+    /* not a perfect fit */
+    border-right: 1px solid qlineargradient(x1: 0, y1: 1, x2: 0, y2: 0,
+                                            stop: 0 #202020, stop: 0.75 #242728, stop: 1.0 #272D30);
     color: #B0B1B0;
     height: 1.125em;
     min-height: 1.125em;
     max-height: 2.125em;
-    background: qradialgradient(cx: 1, cy: 2, fx: 1, fy: 2, radius: 2, spread: reflect,
-                                stop: 0.5 #202020, stop: 0.875 #242728, stop: 1.0 #272D30);
+    background: qradialgradient(cx: 1, cy: 2, fx: 1, fy: 2, radius: 2, spread: pad,
+                                stop: 0.5 #202020, stop: 0.875 #2c3032, stop: 1.0 #384145);
 }
 
 QTabBar::tab:selected {
-    border: none;
-    background: qradialgradient(cx: 0, cy: -1, fx: -, fy: -1, radius: 2, spread: reflect,
-                                stop: 0.5 #202020, stop: 0.875 #242728, stop: 1.0 #272D30);
-    /* background: qradialgradient(x1: 0.5, y1: 0, radius=0.5, 
-                                stop: 0.75 #384145, stop: 1.0 #4F5C61); */
+    background: qradialgradient(cx: 1, cy: 2, fx: 1, fy: 2, radius: 2, spread: pad,
+                                stop: 0.5 #202020, stop: 0.55 #212726, stop: 0.875 #384145, stop: 1.0 #4F5C61);
+    color: #CBCBCB;
+}
+
+QTabBar::tab:!selected:hover {
+    background: qradialgradient(cx: 1, cy: 2, fx: 1, fy: 2, radius: 2, spread: pad,
+                                stop: 0.4 #202020, stop: 0.8 #2c3032, stop: 1 #404A4F);
+    color: #BCBCBC;
 }

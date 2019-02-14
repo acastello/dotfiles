@@ -11,7 +11,7 @@ shopt -s autocd globstar histappend
 # copy CWD
 bind '"\C-xw": "pwd | sed 's.$./.' | xclip -r \n"'
 # bash
-bind '"\ec":        "\C-a# \C-e\n"'                 # CMD -> # CMD 	⏎
+bind '"\ec":        "\C-a# \n"'                 # CMD -> # CMD 	⏎
 bind '"\C-x&":      "\C-a(\C-e&)\n"'                # CMD -> (CMD &) # execute detached
 bind '"\C-b:":      "\C-awhile :; do \C-e ; done"'  # CMD -> while true ; do CMD ; done
 bind '"\C-be":      " $EDITOR ~/.bashrc\n"'          # vim ~/.bashrc
@@ -94,6 +94,7 @@ bind '"\e\C-gf":          "fetch\n"'
 bind '"\e\C-go":          "checkout \e\C-g\eo"'
 bind '"\e\C-g\eo.":         ".\n"'
 bind '"\e\C-g\eop":         "--patch "'
+bind '"\e\C-g\eom":         "--conflict=merge \e\C-g\eo"'
 bind '"\e\C-g\eo1":         "HEAD^\n"'
 bind '"\e\C-g\eo-":         "-\n"'
 bind '"\e\C-g\C-o":       "checkout master\n"'
