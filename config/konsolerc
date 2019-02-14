@@ -9,9 +9,10 @@ SaveGeometryOnExit=false
 ShowMenuBarByDefault=false
 
 [MainWindow]
-State=AAAA/wAAAAD9AAAAAAAAAz4AAAVEAAAABAAAAAQAAAAIAAAACPwAAAAA
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAAxoAAACdAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 
 [TabBar]
 TabBarUseUserStyleSheet=true
-TabBarUserStyleSheetFile=file://home/acastello/.config/konsole.css
+TabBarUserStyleSheetFile=file://home/alex/.config/konsole.css
