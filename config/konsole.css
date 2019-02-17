@@ -24,8 +24,8 @@ QTabBar::tab {
 }
 
 QTabBar::tab:selected {
-    background: qradialgradient(cx: 1, cy: 2, fx: 1, fy: 2, radius: 2, spread: pad,
-                                stop: 0.5 #202020, stop: 0.55 #212726, stop: 0.875 #384145, stop: 1.0 #4F5C61);
+    background: qradialgradient(cx: 0.55, cy: 0.9, fx: 0.55, fy: 0.9, radius: 0.8, spread: pad,
+                                stop: 0 #202020, stop: 0.25 #212726, stop: 0.775 #384145, stop: 1.0 #4F5C61);
     color: #CBCBCB;
 }
 

@@ -52,28 +52,17 @@ bindsym Mod4+4 exec click2kill -19
 bindsym Mod4+5 exec click2kill -18
 bindsym Mod4+6 exec click2kill
 
-# open mpv with the current selection
-bindsym Mod1+m exec "mpvpath=`xclip -o`;vlc $mpvpath"
-
 # start a terminal
 bindsym Mod1+Return exec urxvt
-bindsym Mod4+Return exec urxvt -title floating_urxvt
+bindsym Mod4+Return exec urxvt -title floating_urxvt -geometry 80x40
 for_window [instance="urxvt" title="floating_urxvt"] floating enable
 bindsym Ctrl+Mod4+Return exec konsole
-bindsym Ctrl+Mod4+Mod1+Return exec urxvt -fn "xft:Inconsolata:pixelsize=7:antialas=true"
-bindsym Shift+Mod4+Mod1+Return exec urxvt -fn "xft:Inconsolata:pixelsize=4:antialas=true"
 
 # kill focused window
 bindsym Mod1+Shift+q kill
 
 # start dmenu (a program launcher)
-# bindsym Mod1+d exec --no-startup-id dmenu_run -dim 0.35 -f -fn "Inconsolata-12:normal"
-bindsym Mod1+Alt_R exec --no-startup-id dmenu_run -dim 0.35 -f -fn "Inconsolata-12:normal"
-bindsym Mod4+d exec bashrun
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym Mod1+d exec --no-startup-id i3-dmenu-desktop
+bindsym Mod1+Alt_R exec --no-startup-id rofi -show run
 
 # change focus
 bindsym Mod1+$left focus left
@@ -293,6 +282,13 @@ bindsym  Mod1+XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +1
 bindsym Shift+XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +15%"
 bindsym       XF86AudioMute        exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
 bindsym       XF86AudioMicMute     exec "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+# brightness
+bindsym       XF86MonBrightnessDown exec "xbacklight -dec 5"
+bindsym  Mod1+XF86MonBrightnessDown exec "xbacklight -dec 1"
+bindsym Shift+XF86MonBrightnessDown exec "xbacklight -dec 20"
+bindsym       XF86MonBrightnessUp   exec "xbacklight -inc 5"
+bindsym  Mod1+XF86MonBrightnessUp   exec "xbacklight -inc 1"
+bindsym Shift+XF86MonBrightnessUp   exec "xbacklight -inc 20"
 
 bindsym Mod4+XF86Sleep exec systemctl suspend
 
@@ -377,13 +373,13 @@ mode "resize gaps" {
 
 }
 
-bindsym Mod1+g mode "resize gaps"
+bindsym Mod4+g mode "resize gaps"
 
 mode "passthrough" {
 	bindsym Mod1+Escape 	mode "default"
 }
 
-bindsym Mod1+p		mode "passthrough"
+bindsym Mod4+p		mode "passthrough"
 
 # mode "movement" {
 #     # bindsym Escape              mode "default"
@@ -422,7 +418,7 @@ bindsym Mod1+p		mode "passthrough"
 #     bindsym Mod1+F8 workspace Φ8
 # }
 
-bindsym Mod1+Shift+p mode "movement"
+# bindsym Mod1+Shift+p mode "movement"
 
 set $layoutmode Select Layout: 1-US, 2-ES, 3-DE, 4-RU, 5-GR, 6-RS, 7-IL
 mode "$layoutmode" {
@@ -440,7 +436,7 @@ mode "$layoutmode" {
     bindsym --release semicolon exec xdotool key ntilde ; mode "default"
 }
 
-bindcode Mod1+Shift+32      mode "$layoutmode"
+bindcode Mod4++32      mode "$layoutmode"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -490,6 +486,9 @@ bindsym Mod4+button1 --release --whole-window exec sleep 1; exec xdotool mouseup
 
 # bring floating window to the cursor
 bindsym Mod4+grave move position mouse
+
+bindsym Mod4+Escape workspace 201:⎇1
+
 #
 
 #Startup
@@ -530,7 +529,7 @@ bindsym --release XF86Launch1 exec xset dpms force off
 bindsym --release Mod4+w exec spam
 bindsym Print exec scrot
 bindsym shift+Print exec scrot -bu
-bindsym --release Ctrl+Print exec "sleep 0.25 ; selscrot 0.5"
+bindsym --release Ctrl+Print exec "sleep 0.25 ; selscrot -d 0.5 -s"
 #synergy
 # exec_always --no-startup-id killall synergyc
 # exec_always --no-startup-id synergyc 192.168.1.115
