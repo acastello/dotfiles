@@ -85,6 +85,7 @@ bind '"\e\C-g\C-g":          "status\C-a \n"'
 bind '"\e\C-gs":          "show\n"'
 bind '"\e\C-g-s":         "show --name-only\n"'
 bind '"\e\C-gd":          "diff\n"'
+bind '"\e\C-g-d":         "diff --stat\n"'
 bind '"\e\C-g\C-d":       "diff --color-words=.\n"'
 bind '"\e\C-g\C-p":       "pull\n"'
 bind '"\e\C-gl":          "log --oneline --graph\n"'
@@ -150,14 +151,7 @@ HISTSIZE=
 HISTFILESIZE=
 HISTCONTROL=ignorespace
 
-# PS1='[\u@\h \W]\$ '
-# PS1='\[\e[1m\][\[\e[31m\]\u\[\e[0m\]@\[\e[1;31m\]\h \[\e[1;34m\]\W\[\e[39m\]]\[\e[0m\]\$ '
-# PS1='\[\e[1;37;40m\]$?\[\e[0;40;31m\]░▒\[\e[41;35m\]░ \[\e[1;37m\]\u@\h \[\e[0;41;34m\]░\[\e[31;40m\]▒░\[\e[1;37m\] \w \[\e[0;7;34m\]░▒\[\e[0;34m\]░\[\e[0m\]
-# \[\e[1m\]$\[\e[0m\] '
-# PS1='\[\e[37;40m\]\[\e[1;31m\]\u\[\e[37m\]@\[\e[31m\]\h \[\e[34m\]\W\[\e[0;30m\]▓▒░\[\e[0m\]\[\e[1m\]$\[\e[0m\] '
-# PS1='\[\e[40m\]$(if [ -v SSH_CLIENT ] ; then echo '\''\[\e[1;31m\]\u\[\e[37m\]@\[\e[31m\]\h'\'' ; else echo '\''\[\e[1;31m\]'\''"${USER::1}"'\''\[\e[37m\]@\[\e[31m\]'\''${HOSTNAME::1} ; fi) \[\e[1;34m\]\W\[\e[1;36m\]$(b="$(git branch-name 2>/dev/null)"; if [ "$b" = master ]; then echo " M‥"; elif [ "$b" = HEAD ]; then echo " H‥"; elif [ -n "$b" ]; then echo " $b" ; fi)\[\e[0;30m\]▓▒░\[\e[0m\]\[\e[1m\]$\[\e[0m\] '
 PS1='\[\e[40m\]$(EC=$?; if [ -v SSH_CLIENT ] ; then echo '\''\[\e[1;31m\]\u\[\e[37m\]@\[\e[31m\]\h '\''; elif [ $EC -ne 0 ]; then printf '\''\[\e[1;37;41m\]'\''"%-3s" $EC; EC=0; else echo '\''\[\e[1;31m\] ~ '\''; fi)\[\e[1;34;40m\]$(if [ "$PWD" = "$HOME" ]; then echo "~"; else PPWD="$(basename "$(dirname "$PWD")")"; if [ ${#PPWD} -gt 15 ]; then echo "${PPWD::10}‥"'\''\[\e[21;37m\]/\[\e[1;34m\]'\''"$(basename "$PWD")"; else echo "${PPWD}"'\''\[\e[21;37m\]/\[\e[1;34m\]'\''"$(basename "$PWD")"; fi; fi)\[\e[1;36m\]$(b="$(git branch-name 2>/dev/null)"; if [ "$b" = master ]; then echo " µ"; elif [ "$b" = HEAD ]; then echo " ĥ"; elif [ -n "$b" ]; then echo " $b" ; fi)\[\e[0;30m\]▓▒░\[\e[0m\]\[\e[1m\]$\[\e[0m\] '
-# PS1='▓'
 
 export EDITOR=vim
 
