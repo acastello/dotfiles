@@ -176,4 +176,17 @@ alias ffmpeg='ffmpeg -hide_banner'
 alias v=vim
 alias v-json='vim -c ":set ft=json"'
 
+# nu, not v. as in ν-tify
+ν() {
+    eval "$@"
+    ec=$?
+    if [ $ec -ne 0 ]; then
+        notify-send -i dialog-error "asd" "$*"
+        (exit $?;) # convoluted af way to set error code without closing bash
+    else
+        notify-send "bash νοτιφ" "$*"
+    fi
+}
+
+
 # vim: tw=0
