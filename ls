@@ -1,13 +1,13 @@
 #!/bin/sh
 
-ls -l --color=always \
+ls -ld --color=auto \
     ~/.Xresources \
     ~/.i3status.conf \
     ~/.local/share/konsole/Profile\ 1.profile \
     ~/.local/share/konsole/Xres.colorscheme \
     ~/.inputrc \
     ~/.bash_profile \
-    ~/.mpdconf \
+    ~/.mpd/mpd.conf \
     ~/.vimrc \
     ~/.ghci \
     ~/.Xmodmap \
@@ -20,8 +20,4 @@ ls -l --color=always \
     ~/.config/rofi/config \
     ~/.config/fontconfig/fonts.conf \
     ~/.config/konsolerc \
-    ~/.vim/colors/darkh.vim \
-    ~/.vim/spell/en.utf-8.add \
-    ~/.vim/spell/en.utf-8.add.spl \
-    ~/.vim/syntax/haskell.vim \
-    ~/.vim/haskell.vim
+    ~/.vim

@@ -2,7 +2,21 @@ colorscheme darkh
 
 setlocal cm=blowfish2
 
+set clipboard=unnamedplus
+
+set so=7
+set siso=10
+set cwh=15
+set laststatus=2
+
+au BufNewFile,BufRead *.kt set filetype=kotlin
+
 au filetype haskell source ~/.vim/haskell.vim
+
+au filetype ruby set sw=2
+
+map <C-W><C-T> :term<CR>
+nmap <C-c> :q<CR>
 
 map! <C-v>ta  ɐ
 map! <C-v>sa  ɑ
