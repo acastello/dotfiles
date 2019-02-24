@@ -30,6 +30,7 @@ xress = read_xresources('*')
 c.backend = 'webengine'
 c.downloads.remove_finished = 1500
 c.url.searchengines['w'] =    "https://en.wikipedia.org/w/index.php?search={}"
+c.url.searchengines['Ew'] =   "https://es.wikipedia.org/w/index.php?search={}"
 c.url.searchengines['i'] =    "https://infogalactic.com/info/{}"
 c.url.searchengines['aw'] =   "https://wiki.archlinux.org/index.php?search={}&title=Special%3ASearch&go=Go"
 c.url.searchengines['g'] =    "https://github.com/search?utf8=%E2%9C%93&q={}"
