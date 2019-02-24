@@ -54,7 +54,7 @@ bindsym Mod4+6 exec click2kill
 
 # start a terminal
 bindsym Mod1+Return exec urxvt
-bindsym Mod4+Return exec urxvt -title floating_urxvt -geometry 80x40
+bindsym Mod4+Return exec floating_urxvt # urxvt -title floating_urxvt -geometry 80x40
 for_window [instance="urxvt" title="floating_urxvt"] floating enable
 bindsym Ctrl+Mod4+Return exec konsole
 
@@ -128,45 +128,47 @@ bindsym Mod1+grave scratchpad show
 # naming the workspaces like that allows i3 to sort them numerically
 
 # Machine-specific workspace -> output defs
-workspace 1:1 output HDMI-1
-workspace 2:2 output HDMI-1
-workspace 3:3 output HDMI-1
-workspace 4:4 output HDMI-1
-workspace 5:5 output HDMI-1
-workspace 6:6 output HDMI-1
-workspace 7:7 output HDMI-1
-workspace 8:8 output HDMI-1
-workspace 9:9 output HDMI-1
-workspace 10:10 output HDMI-1
-workspace 11:Q output HDMI-1
-workspace 101:F1 output HDMI-1
-workspace 102:F2 output HDMI-1
-workspace 103:F3 output HDMI-1
-workspace 103:F4 output HDMI-1
-workspace 201:⎇1 output DP-2
-workspace 202:⎇2 output DP-2
-workspace 203:⎇3 output DP-2
-workspace 204:⎇4 output DP-2
-workspace 205:⎇5 output DP-2
-workspace 206:⎇6 output DP-2
-workspace 207:⎇7 output DP-2
-workspace 208:⎇8 output DP-2
-workspace 209:⎇9 output DP-2
-workspace 210:⎇10 output DP-2
-workspace 211:⎇11 output DP-2
-workspace 212:⎇12 output DP-2
-# workspace 301:◆1 output HDMI-1
-# workspace 302:◆2 output HDMI-1
-# workspace 303:◆3 output HDMI-1
-# workspace 304:◆4 output HDMI-1
-# workspace 305:◆5 output HDMI-1
-# workspace 306:◆6 output HDMI-1
-# workspace 307:◆7 output HDMI-1
-# workspace 308:◆8 output HDMI-1
-# workspace 309:◆9 output HDMI-1
-# workspace 310:◆10 output HDMI-1
-# workspace 311:◆11 output HDMI-1
-# workspace 312:◆12 output HDMI-1
+set $screen eDP-1
+set $hdmi HDMI-1
+workspace 1:1 output $hdmi
+workspace 2:2 output $hdmi
+workspace 3:3 output $hdmi
+workspace 4:4 output $hdmi
+workspace 5:5 output $hdmi
+workspace 6:6 output $hdmi
+workspace 7:7 output $hdmi
+workspace 8:8 output $hdmi
+workspace 9:9 output $hdmi
+workspace 10:10 output $hdmi
+workspace 11:Q output $hdmi
+workspace 101:F1 output $hdmi
+workspace 102:F2 output $hdmi
+workspace 103:F3 output $hdmi
+workspace 103:F4 output $hdmi
+workspace 201:⎇1 output $screen
+workspace 202:⎇2 output $screen
+workspace 203:⎇3 output $screen
+workspace 204:⎇4 output $screen
+workspace 205:⎇5 output $screen
+workspace 206:⎇6 output $screen
+workspace 207:⎇7 output $screen
+workspace 208:⎇8 output $screen
+workspace 209:⎇9 output $screen
+workspace 210:⎇10 output $screen
+workspace 211:⎇11 output $screen
+workspace 212:⎇12 output $screen
+# workspace 301:◆1 output $hdmi
+# workspace 302:◆2 output $hdmi
+# workspace 303:◆3 output $hdmi
+# workspace 304:◆4 output $hdmi
+# workspace 305:◆5 output $hdmi
+# workspace 306:◆6 output $hdmi
+# workspace 307:◆7 output $hdmi
+# workspace 308:◆8 output $hdmi
+# workspace 309:◆9 output $hdmi
+# workspace 310:◆10 output $hdmi
+# workspace 311:◆11 output $hdmi
+# workspace 312:◆12 output $hdmi
 
 
 # switch to workspace
@@ -290,6 +292,11 @@ bindsym       XF86MonBrightnessUp   exec "xbacklight -inc 5"
 bindsym  Mod1+XF86MonBrightnessUp   exec "xbacklight -inc 1"
 bindsym Shift+XF86MonBrightnessUp   exec "xbacklight -inc 20"
 
+# mpv next/prev
+bindsym XF86AudioPlay exec "pidof mpd || mpd; mpc toggle"
+bindsym XF86AudioPrev exec "mpc prev"
+bindsym XF86AudioNext exec "mpc next"
+
 bindsym Mod4+XF86Sleep exec systemctl suspend
 
 # move cursor with movement keys
@@ -311,6 +318,7 @@ mode "cursor" {
     bindsym Mod1+Escape   mode "default"
 }
 bindsym Mod1+c mode "cursor"
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
     # These bindings trigger as soon as you enter the resize mode
@@ -505,9 +513,10 @@ gaps outer 0
 #BG
 # exec_always xrandr --output DisplayPort-0 --mode 640x480 --output HDMI-A-0 --primary --right-of DisplayPort-0 --output DVI-D-1 --right-of HDMI-0 --gamma 1:1:1.10 --brightness 1
 # exec_always xrandr --output HDMI-A-0 --primary --output DVI-D-1 --right-of HDMI-A-0 --gamma 1:1:1.10 --brightness 1.02
-exec_always xmodmap ~/.Xmodmap \
+exec_always setxkbmap -layout us \
+    ; xmodmap ~/.Xmodmap \
     ; xrandr --dpi 96 \
-    ; xrandr --output HDMI-0 --auto --primary --pos 1920x0 --output DP-2 --pos 0x1020 \
+    ; xrandr --output HDMI-1 --auto --primary --pos 1920x0 --output DP-2 --pos 0x1020 --output eDP-1 --pos 0x1020 \
     ; feh --bg-scale ~/pictures/bg00.jpg \
     ; xset dpms 300
 

@@ -14,5 +14,6 @@ State=AAAA/wAAAAD9AAAAAAAAAxoAAACdAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 
 [TabBar]
+NewTabBehavior=PutNewTabAfterCurrentTab
 TabBarUseUserStyleSheet=true
 TabBarUserStyleSheetFile=file://home/alex/.config/konsole.css

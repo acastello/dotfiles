@@ -41,6 +41,7 @@ set colored-stats on
 "\C-h": backward-word             # ←
 "\el": forward-word
 "\ew": backward-kill-word
+"\e[24~": "\C-p\r"
 
 $endif
 

@@ -1,11 +1,13 @@
 add mod3    = Scroll_Lock
+add mod4    = Tab
 remove Lock = Caps_Lock
 remove Control = Control_L
-keysym Control_L = Caps_Lock
 keysym Caps_Lock = Control_L
-add Lock = Caps_Lock
+keysym Control_L = Escape
 add Control = Control_L
+
 keycode 127 = Caps_Lock
+
 keycode 87  = dead_grave        KP_1 KP_End KP_1
 keycode 88  = dead_acute        KP_2 KP_Down KP_2
 keycode 89  = dead_tilde        KP_3 KP_Next KP_3
