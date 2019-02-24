@@ -18,6 +18,7 @@ bind '"\C-be":      " $EDITOR ~/.bashrc\n"'          # vim ~/.bashrc
 bind '"\C-bhe":     " $EDITOR ~/.bash_persistent_history\n"'    # vim ~/.bash_history
 bind '"\C-bhu":     " history -n\n"'
 bind '"\C-b.":      " . ~/.bashrc\n"'                # source ~/.bashrc
+bind '"\C-bn":      "\C-aν "'
 # find
 bind '"\C-f":       "\C-afind -iname \e\C-f"'
 bind '"\e\C-f":       abort'
