@@ -1,5 +1,4 @@
 * {
-    color: red;
     font: 15px monospace;
 }
 
@@ -11,7 +10,7 @@ QWidget {
 
 QTabBar::tab {
     margin-top: 2px;
-    padding: 0px 0.5em 2px 0.5em;
+    padding: 1px 1em 2px 0.5em;
     /* not a perfect fit */
     border-right: 1px solid qlineargradient(x1: 0, y1: 1, x2: 0, y2: 0,
                                             stop: 0 #202020, stop: 0.75 #242728, stop: 1.0 #272D30);
