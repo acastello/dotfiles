@@ -19,7 +19,7 @@ Xcursor.size: 32
 ! --- special colors ---
 
 ! *background: #2f3539
-URxvt*background: [92]#272D30
+URxvt*background: [100]#272D30
 *background: #272D30
 *foreground: #b0b1b0
 
