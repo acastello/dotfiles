@@ -38,7 +38,7 @@ set colored-completion-prefix on
 set colored-stats on
 
 
-"\C-h": backward-word             # ←
+"\eh": backward-word
 "\el": forward-word
 "\ew": backward-kill-word
 "\e[24~": "\C-p\r"
@@ -46,7 +46,6 @@ set colored-stats on
 $endif
 
 $if bash
-
 
 $endif
 

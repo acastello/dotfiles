@@ -8,6 +8,10 @@
 shopt -s autocd globstar histappend
 
 
+# movement
+bind '"\eH": shell-backward-word'
+bind '"\eL": shell-forward-word'
+
 # copy CWD
 bind '"\C-xw": "pwd | sed 's.$./.' | xclip -r \n"'
 # bash
@@ -140,9 +144,10 @@ bind '"\e\e\C-\\b":      "/bin/"'
 bind '"\C-`":       "\C-e`\C-avim `which "'
 bind '"\C-\M-w":    "\C-awatch -t -n 0.75 "'
 bind '"\C-xs":      "\C-asudo "'
-bind '"\M-1":       "\C-a\e\e[C\C-u"'
-bind '"\e`":        "ls -ltrhA\n"'
-bind '"\el":        "\C-als -ltrhA \n"'
+bind '"\e1":       "\C-a\eL\C-u"'
+bind '"\e`":        "\C-als -ltrhA \n"'
+bind '"\el":        forward-word'
+bind '"\eL":        shell-forward-word'
 # terraform
 bind '"\C-\M-t":    "terraform \e\C-\M-t"'
 bind '"\e\C-\M-ta":   "apply "'
