@@ -1,38 +1,14 @@
 #!/bin/bash
 
 declare -A files
-files=(
-  ["Xmodmap"]="$HOME/.Xmodmap"
-  ["Xresources"]="$HOME/.Xresources"
-  ["bash_profile"]="$HOME/.bash_profile"
-  ["bashrc"]="$HOME/.bashrc"
-  ["config/fontconfig/fonts.conf"]="$HOME/.config/fontconfig/fonts.conf"
-  ["config/konsole.css"]="$HOME/.config/konsole.css"
-  ["config/konsolerc"]="$HOME/.config/konsolerc"
-  ["config/qutebrowser/config.py"]="$HOME/.config/qutebrowser/config.py"
-  ["config/rofi/config"]="$HOME/.config/rofi/config"
-  ["ghci"]="$HOME/.ghci"
-  ["gitconfig"]="$HOME/.gitconfig"
-  ["i3/config"]="$HOME/.i3/config"
-  ["i3status.conf"]="$HOME/.i3status.conf"
-  ["inputrc"]="$HOME/.inputrc"
-  ["local/share/konsole/Profile 1.profile"]="$HOME/.local/share/konsole/Profile 1.profile"
-  ["local/share/konsole/Xres.colorscheme"]="$HOME/.local/share/konsole/Xres.colorscheme"
-  ["local/share/konsole/default.keytab"]="$HOME/.local/share/konsole/default.keytab"
-  # ["ls"]="$HOME/."
-  ["mpd/mpd.conf"]="$HOME/.mpd/mpd.conf"
-  ["ncmpcpp/config"]="$HOME/.ncmpcpp/config"
-  ["tmux.conf"]="$HOME/.tmux.conf"
-  ["vim/bot.vim"]="$HOME/.vim/bot.vim"
-  ["vim/c.vim"]="$HOME/.vim/c.vim"
-  ["vim/colors/darkh.vim"]="$HOME/.vim/colors/darkh.vim"
-  ["vim/ftdetect/kotlin.vi"]="$HOME/.vim/ftdetect/kotlin.vi"
-  ["vim/haskell.vim"]="$HOME/.vim/haskell.vim"
-  ["vim/indent/kotlin.vim"]="$HOME/.vim/indent/kotlin.vim"
-  ["vim/spell/en.utf-8.add"]="$HOME/.vim/spell/en.utf-8.add"
-  ["vim/spell/en.utf-8.add.spl"]="$HOME/.vim/spell/en.utf-8.add.spl"
-  ["vim/syntax/haskell.vim"]="$HOME/.vim/syntax/haskell.vim"
-  ["vim/syntax/kotlin.vim"]="$HOME/.vim/syntax/kotlin.vim"
-  ["vim/wowprofile.vim"]="$HOME/.vim/wowprofile.vim"
-  ["vimrc"]="$HOME/.vimrc"
-)
+export files
+
+IFS=$'\n' file_names=($(git ls-files))
+for file in "${file_names[@]}"; do
+    files["$file"]="$HOME/.$file"
+done
+
+unset files[assocs] \
+      files[diff] \
+      files[ln] \
+      files[ls]
