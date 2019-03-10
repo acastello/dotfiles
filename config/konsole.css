@@ -13,23 +13,23 @@ QTabBar::tab {
     padding: 1px 1em 2px 0.5em;
     /* not a perfect fit */
     border-right: 1px solid qlineargradient(x1: 0, y1: 1, x2: 0, y2: 0,
-                                            stop: 0 #202020, stop: 0.75 #242728, stop: 1.0 #272D30);
+                                            stop: 0 #252728, stop: 0.436 #2c3032, stop: 0.789 #384145);
     color: #B0B1B0;
     height: 1.125em;
     min-height: 1.125em;
     max-height: 2.125em;
-    background: qradialgradient(cx: 1, cy: 2, fx: 1, fy: 2, radius: 2, spread: pad,
+    background: qradialgradient(cx: 0, cy: 2, fx: 0, fy: 2, radius: 2, spread: pad,
                                 stop: 0.5 #202020, stop: 0.875 #2c3032, stop: 1.0 #384145);
 }
 
 QTabBar::tab:selected {
-    background: qradialgradient(cx: 0.55, cy: 0.9, fx: 0.55, fy: 0.9, radius: 0.8, spread: pad,
+    background: qradialgradient(cx: 0.45, cy: 0.9, fx: 0.45, fy: 0.9, radius: 0.8, spread: pad,
                                 stop: 0 #202020, stop: 0.25 #212726, stop: 0.775 #384145, stop: 1.0 #4F5C61);
     color: #CBCBCB;
 }
 
 QTabBar::tab:!selected:hover {
-    background: qradialgradient(cx: 1, cy: 2, fx: 1, fy: 2, radius: 2, spread: pad,
+    background: qradialgradient(cx: 0, cy: 2, fx: 0, fy: 2, radius: 2, spread: pad,
                                 stop: 0.4 #202020, stop: 0.8 #2c3032, stop: 1 #404A4F);
     color: #BCBCBC;
 }
