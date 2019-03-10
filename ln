@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -u
+
+. assocs
+
+for file in "$@"; do
+    dest="${files["$file"]}"
+    ln -sfrv "$file" "$dest"
+done

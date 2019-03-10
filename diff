@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -ue
+
+. assocs
+
+if [ $# -gt 0 ]; then
+    for file in "$@"; do
+        git diff "$file" "${files["$file"]}"
+    done
+else
+    for file in "${!files[@]}"; do
+        git diff "$@" "$file" "${files[$file]}"
+    done
+fi
