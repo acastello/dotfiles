@@ -292,7 +292,7 @@ bindsym       XF86MonBrightnessUp   exec "xbacklight -inc 5"
 bindsym  Mod5+XF86MonBrightnessUp   exec "xbacklight -inc 1"
 bindsym Shift+XF86MonBrightnessUp   exec "xbacklight -inc 20"
 
-# mpv next/prev
+# mpd next/prev
 bindsym XF86AudioPlay exec "pidof mpd || mpd; mpc toggle"
 bindsym XF86AudioPrev exec "mpc prev"
 bindsym XF86AudioNext exec "mpc next"
@@ -535,6 +535,8 @@ exec alsa-ctl init
 exec xss-lock -- i3lock -n -c 272D30 -i ~/pictures/screensaver.png
 bindsym --release Mod4+s exec xset dpms force off
 bindsym --release XF86Launch1 exec xset dpms force off
+
+bindsym XF86Calculator exec floating_ghci.sh
 
 bindsym --release Mod4+w exec spam
 bindsym Print exec scrot
