@@ -109,3 +109,5 @@ URxvt.urlLauncher: xdg-open
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger: C-Up
 URxvt*resize-font.show: C-slash
+
+rofi.width: -80
