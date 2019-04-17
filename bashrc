@@ -173,7 +173,47 @@ HISTSIZE=
 HISTFILESIZE=
 HISTCONTROL=ignorespace
 
-PS1='\[\e[40m\]$(EC=$?; if [ -v SSH_CLIENT ] ; then echo '\''\[\e[1;31m\]\u\[\e[37m\]@\[\e[31m\]\h '\''; elif [ $EC -ne 0 ]; then printf '\''\[\e[1;37;41m\]'\''"%-3s" $EC; EC=0; else echo '\''\[\e[1;31m\] ~ '\''; fi)\[\e[1;34;40m\]$(if [ "$PWD" = "$HOME" ]; then echo "~"; else PPWD="$(basename "$(dirname "$PWD")")"; if [ ${#PPWD} -gt 15 ]; then echo "${PPWD::10}‥"'\''\[\e[21;37m\]/\[\e[1;34m\]'\''"$(basename "$PWD")"; else echo "${PPWD}"'\''\[\e[21;37m\]/\[\e[1;34m\]'\''"$(basename "$PWD")"; fi; fi)\[\e[1;36m\]$(b="$(git branch-name 2>/dev/null)"; if [ "$b" = master ]; then echo " µ"; elif [ "$b" = HEAD ]; then echo " ĥ"; elif [ -n "$b" ]; then echo " $b" ; fi)\[\e[0;30m\]▓▒░\[\e[0m\]\[\e[1m\]$\[\e[0m\] '
+__ps1_hostname='\[\e[40m\]$(
+EC=$?
+if [ -v SSH_CLIENT ] ; then
+    echo '\''\[\e[1;31m\]\u\[\e[37m\]@\[\e[31m\]\h '\''
+elif [ $EC -ne 0 ]; then
+    printf '\''\[\e[1;37;41m\]'\''"%-3s" $EC
+    EC=0
+else
+    echo '\''\[\e[1;31m\] ~ '\''
+fi)'
+__ps1_pwd='\[\e[1;34;40m\]$(
+RWD="${PWD##*/}"
+PAWD="${PWD%/*}"
+PRWD="${PAWD##*/}"
+if [ "$PWD" = "$HOME" ]; then
+    echo "~"
+else
+    [ "$PAWD" = "$HOME" ] &&
+        PRWD="~"
+    [ "$PAWD" = "/$PRWD" ] &&
+        PRWD="$PAWD"
+    if [ ${#PRWD} -gt 15 ]; then
+        echo "${PRWD::10}…"'\''\[\e[21;37m\]/\[\e[1;34m\]'\''"$RWD";
+    else
+        echo "${PRWD}"'\''\[\e[21;37m\]/\[\e[1;34m\]'\''"$RWD"
+    fi
+fi)'
+__ps1_git='\[\e[1;36m\]$(
+b="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
+if [ "$b" = master ]; then
+    echo " µ"
+elif [ "$b" = HEAD ]; then
+    echo " ĥ"
+elif [ -n "$b" ]; then
+    echo " $b"
+fi)'
+__ps1_trail='\[\e[0;30m\]▓▒░\[\e[0m\]\[\e[1m\]$\[\e[0m\] '
+__ps1_k8s='$(
+kubectl config current-context 2>/dev/null
+)'
+PS1="${__ps1_hostname}${__ps1_pwd}${__ps1_git}${__ps1_trail}"
 
 export EDITOR=vim
 
