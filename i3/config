@@ -44,10 +44,8 @@ bindsym Mod5+e exec qutebrowser
 # thunar as windows explorer
 bindsym Mod4+e exec thunar
 
-bindsym Mod4+c exec copyq show
+# bindsym Mod4+c exec copyq show
 
-bindsym Mod4+2 exec wew
-bindsym Mod4+3 exec env LD_PRELOAD=fps_limit.so wew
 bindsym Mod4+4 exec click2kill -19
 bindsym Mod4+5 exec click2kill -18
 bindsym Mod4+6 exec click2kill
@@ -63,6 +61,8 @@ bindsym Mod5+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym Mod5+Alt_R exec --no-startup-id rofi -show run
+
+bindsym Mod4+c exec clip-by-win.sh
 
 # change focus
 bindsym Mod5+$left focus left
@@ -183,6 +183,9 @@ bindsym   Mod5+8    workspace 8:8
 bindsym   Mod5+9    workspace 9:9
 bindsym   Mod5+0    workspace 10:10
 bindsym   Mod5+q    workspace 11:Q
+bindsym   Mod4+1    workspace 21:Ⅰ
+bindsym   Mod4+2    workspace 22:Ⅱ
+bindsym   Mod4+3    workspace 23:Ⅲ
 bindsym        F1   workspace 101:F1
 bindsym        F2   workspace 102:F2
 bindsym        F3   workspace 103:F3
@@ -257,21 +260,29 @@ bindsym Mod4+Up move container to output up
 bindsym Mod4+Down move container to output down
 bindsym Mod4+Left move container to output left
 bindsym Mod4+Right move container to output right
+bindsym Mod4+$Up move container to output up
+bindsym Mod4+$Down move container to output down
+bindsym Mod4+$Left move container to output left
+bindsym Mod4+$Right move container to output right
 
 # move screen up/dpwm/left/right
 bindsym Shift+Mod4+Up move workspace to output up
 bindsym Shift+Mod4+Down move workspace to output down
 bindsym Shift+Mod4+Left move workspace to output left
 bindsym Shift+Mod4+Right move workspace to output right
+bindsym Shift+$Mod4+Up move workspace to output up
+bindsym Shift+$Mod4+Down move workspace to output down
+bindsym Shift+$Mod4+Left move workspace to output left
+bindsym Shift+$Mod4+Right move workspace to output right
 
 # reload the configuration file
 bindsym Mod5+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym Mod4+r restart
 bindsym Mod5+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym Mod5+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # lockscreen
-bindsym Mod4+l exec --no-startup-id "i3lock -i ~/pictures/screensaver.png"
 bindsym Mod4+Mod5+l exec --no-startup-id "i3lock -i ~/pictures/screensaver.png ; sleep 0.5 ; xset dpms force off"
 bindsym XF86ScreenSaver exec --no-startup-id "i3lock -i ~/pictures/screensaver.png"
 bindsym Mod5+Mod4+s exec --no-startup-id "i3lock -i ~/pictures/screensaver.png ; sleep 0.5 ; systemctl suspend"
@@ -519,7 +530,8 @@ exec_always setxkbmap -layout us \
     ; xrandr --dpi 96 \
     ; xrandr --output $hdmi --auto --primary --pos 1920x0 --output $screen --pos 0x1020 \
     ; feh --bg-scale ~/pictures/bg00.jpg \
-    ; xset dpms 300
+    ; xset dpms 300 \
+    ; xset r rate 200 50
 
 #sound
 exec xset -b
@@ -537,6 +549,7 @@ bindsym --release Mod4+s exec xset dpms force off
 bindsym --release XF86Launch1 exec xset dpms force off
 
 bindsym XF86Calculator exec floating_ghci.sh
+bindsym Mod4+n exec floating_urxvt --geometry 80x24 -e ncmpcpp
 
 bindsym --release Mod4+w exec spam
 bindsym Print exec scrot
