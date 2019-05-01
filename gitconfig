@@ -1,6 +1,6 @@
 [user]
 	email = alejandro.castello@freiheit.com
-	name = alejandro.castello
+	name = Alejandro Castello
 [color]
     diff = auto
     status = auto
@@ -13,7 +13,7 @@
     serve = daemon --reuseaddr --verbose  --base-path=. --verbose --export-all ./.git
     fixup = !sh -c 'REV=$(git rev-parse $1) && git commit --fixup $@ && git rebase -i --autosquash $REV^' -
     squash = !sh -c 'REV=$(git rev-parse $1) && git commit --squash $@ && git rebase -i --autosquash $REV^' -
-    push-review = "!git push origin HEAD:alejandro.castello && git checkout alejandro.castello"
+    push-review = "!git push origin HEAD:alejandro.castello"
     purr = pull --rebase
     branch-name = rev-parse --abbrev-ref HEAD
     publish = "!git push -u origin $(git branch-name)"
@@ -22,19 +22,21 @@
     ls = log --graph --abbrev-commit --oneline
     camend = commit --amend --no-edit
     my-notes = !$EDITOR "$(git rev-parse --show-toplevel | sed 's \\(.*\\)/ \\1/.notes. ')"/notes
-    # notes = "!git -C .notes."$(git rev-parse --show-toplevel)"
-
+    serve = "!git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose"
 
 [core]
     editor = vim
-	pager = less -+FX
+	pager = less -+X +j
 [push]
     default = tracking
 [merge]
     tool = kdiff3
+    stat = true
 [diff]
-    tool = meld
+    color-words = true
 [rebase]
     autostash = true
 [pull]
     rebase = true
+[pretty]
+    ls = %C(yellow)%h%Creset %<(18,mtrunc)%aN %C(auto)% D %s %C(cyan)%ar
