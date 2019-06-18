@@ -252,6 +252,7 @@ rsyncflags='-vrtuDz'
 #Usr aliases
 alias g='grep --color=always -Irn'
 alias ls='ls --color=auto'
+alias man='MANPAGER="vim +MANPAGE -" man'
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias feh='feh -F.'
