@@ -139,7 +139,7 @@ workspace 6:6 output $hdmi
 workspace 7:7 output $hdmi
 workspace 8:8 output $hdmi
 workspace 9:9 output $hdmi
-workspace 10:10 output $hdmi
+workspace 10:10 output $screen
 workspace 11:Q output $hdmi
 workspace 101:F1 output $hdmi
 workspace 102:F2 output $hdmi
@@ -520,7 +520,8 @@ new_window pixel 6
 new_float pixel 6
 gaps inner 18
 gaps outer 0
-#for_window [class="^.*"] border pixel 0
+smart_borders yes
+smart_gaps yes
 
 #BG
 # exec_always xrandr --output DisplayPort-0 --mode 640x480 --output HDMI-A-0 --primary --right-of DisplayPort-0 --output DVI-D-1 --right-of HDMI-0 --gamma 1:1:1.10 --brightness 1
