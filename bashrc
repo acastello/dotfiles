@@ -20,7 +20,7 @@ bind '"\eL": shell-forward-word'
 bind '"\C-xw": "pwd | sed 's.$./.' | xclip -r \n"'
 # bash
 bind '"\ec":        "\C-a# \n"'                 # CMD -> # CMD 	⏎
-bind '"\C-x&":      "\C-a(\C-e&)\n"'                # CMD -> (CMD &) # execute detached
+bind '"\C-x&":      "\C-a(setsid setsid \C-e&)\n"'                # CMD -> (CMD &) # execute detached
 bind '"\C-b:":      "\C-awhile :; do \C-e ; done"'  # CMD -> while true ; do CMD ; done
 bind '"\C-be":      " $EDITOR ~/.bashrc\n"'          # vim ~/.bashrc
 bind '"\C-bhe":     " $EDITOR ~/.bash_persistent_history\n"'    # vim ~/.bash_history
