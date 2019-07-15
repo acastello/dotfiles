@@ -27,6 +27,7 @@
 [core]
     editor = vim
 	pager = less -+X +j
+	abbrev = 8
 [push]
     default = tracking
 [merge]
@@ -39,4 +40,11 @@
 [pull]
     rebase = true
 [pretty]
-    ls = %C(yellow)%h%Creset %<(18,mtrunc)%aN %C(auto)% D %s %C(cyan)%ar
+    ls = %C(yellow)%h%Creset %<(18,mtrunc)%aN %C(auto)% D %s %C(cyan)%cr
+[credential "https://git.daimler.com/"]
+    helper = store
+
+[hub]
+	protocol = https
+	host = git.daimler.com
+	reportCrash = never
