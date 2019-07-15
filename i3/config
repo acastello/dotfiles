@@ -39,7 +39,7 @@ set $right l
 floating_modifier Mod5
 
 # open dwb
-bindsym Mod5+e exec qutebrowser
+# bindsym Mod5+e exec qutebrowser
 
 # thunar as windows explorer
 bindsym Mod4+e exec thunar
@@ -143,6 +143,7 @@ workspace 8:8 output $hdmi
 workspace 9:9 output $hdmi
 workspace 10:10 output $screen
 workspace 11:Q output $hdmi
+workspace 12:E output $hdmi
 workspace 101:F1 output $hdmi
 workspace 102:F2 output $hdmi
 workspace 103:F3 output $hdmi
@@ -185,6 +186,7 @@ bindsym   Mod5+8    workspace 8:8
 bindsym   Mod5+9    workspace 9:9
 bindsym   Mod5+0    workspace 10:10
 bindsym   Mod5+q    workspace 11:Q
+bindsym   Mod5+e    workspace 12:E
 bindsym   Mod4+1    workspace 21:Ⅰ
 bindsym   Mod4+2    workspace 22:Ⅱ
 bindsym   Mod4+3    workspace 23:Ⅲ
