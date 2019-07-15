@@ -270,10 +270,10 @@ bindsym Shift+Mod4+Up move workspace to output up
 bindsym Shift+Mod4+Down move workspace to output down
 bindsym Shift+Mod4+Left move workspace to output left
 bindsym Shift+Mod4+Right move workspace to output right
-bindsym Shift+$Mod4+Up move workspace to output up
-bindsym Shift+$Mod4+Down move workspace to output down
-bindsym Shift+$Mod4+Left move workspace to output left
-bindsym Shift+$Mod4+Right move workspace to output right
+bindsym Shift+Mod4+$Up move workspace to output up
+bindsym Shift+Mod4+$Down move workspace to output down
+bindsym Shift+Mod4+$Left move workspace to output left
+bindsym Shift+Mod4+$Right move workspace to output right
 
 # reload the configuration file
 bindsym Mod5+Shift+c reload
@@ -473,7 +473,7 @@ bar {
     # padding between tray icons
     tray_padding 1
 
-    # sepeparator
+    # separator
     separator_symbol " │ "
 
     colors {
@@ -487,17 +487,6 @@ bar {
     }
 }
 bindsym Mod4+b bar mode toggle
-
-#######################################################################
-# automatically start i3-config-wizard to offer the user to create a
-# keysym-based config which used his favorite modifier (alt or windows)
-#
-# i3-config-wizard will not launch if there already is a config file
-# in ~/.i3/config.
-#
-# Please remove the following exec line:
-#######################################################################
-#exec i3-config-wizard
 
 bindsym Mod5+Shift+b border toggle
 
