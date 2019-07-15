@@ -1,0 +1,7 @@
+/* remove line spacing in github's PR interface */
+.add-line-comment, .blob-code, .blob-num, .blob-code-inner {
+    font-size: 14px;
+    font-family: monospace;
+    line-height: 15px;
+    height: 15px;
+}
