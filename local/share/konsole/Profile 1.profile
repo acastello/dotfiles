@@ -10,4 +10,5 @@ Parent=FALLBACK/
 KeyBindings=default
 
 [Scrolling]
+HistorySize=4000
 ScrollBarPosition=2
