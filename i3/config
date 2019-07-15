@@ -360,6 +360,12 @@ mode "resize" {
     bindsym Mod5+Up 	    resize shrink height 1 px or 1 ppt
     bindsym Mod5+Right   resize grow width 1 px or 1 ppt
 
+	# even finer resizing
+    bindsym Mod4+Left    resize shrink width 1 px
+    bindsym Mod4+Down    resize grow height 1 px
+    bindsym Mod4+Up 	 resize shrink height 1 px
+    bindsym Mod4+Right   resize grow width 1 px
+
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -369,6 +375,7 @@ bindsym Mod5+r mode "resize"
 
 mode "resize gaps" {
     # preset amounts
+    bindsym 0           gaps inner current set 0
     bindsym 1           gaps inner current set 18
     bindsym 2           gaps inner current set 8
 	# resize outter gap
@@ -547,7 +554,7 @@ bindsym Mod4+n exec floating_urxvt --geometry 80x24 -e ncmpcpp
 
 bindsym --release Mod4+w exec spam
 bindsym Print exec scrot
-bindsym shift+Print exec scrot -bu
+bindsym shift+Print exec selscrot -bu
 bindsym --release Ctrl+Print exec "sleep 0.25 ; selscrot -d 0.5 -s"
 #synergy
 # exec_always --no-startup-id killall synergyc
@@ -586,7 +593,6 @@ for_window [class="Speedcrunch"] floating enable
 for_window [class="Gloobus-preview"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Gifview"] floating enable
-for_window [class="mpv"] floating enable
 for_window [instance="explorer.exe"] floating enable
 for_window [class="explorer.exe"] floating enable
 for_window [title="bashrun"] floating enable
