@@ -1,10 +1,14 @@
 #!/bin/bash
 
-set -u
-
 . assocs
 
 for file in "$@"; do
-    dest="${files["$file"]}"
-    ln -sfrv "$file" "$dest"
+    for subs in "${!files[@]}"; do
+        if [[ "$subs" == "$file"* ]]; then
+            # echo "$file, $subs -> $dest"
+            dest="${files[$subs]}"
+            mkdir -p "$(dirname "$dest")"
+            ln -sfrvT "$subs" "$dest"
+        fi
+    done
 done
