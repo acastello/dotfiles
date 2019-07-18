@@ -63,6 +63,7 @@ bindsym Mod5+Shift+q kill
 bindsym Mod5+Alt_R exec --no-startup-id rofi -show run
 bindsym Mod5+Tab exec --no-startup-id rofi -show window
 bindsym Mod4+Tab exec --no-startup-id rofi -show workspace
+bindsym Mod5+d exec --no-startup-id rofi -show 'pipe clipboard:pipeclip.sh'
 
 bindsym Mod4+c exec clip-by-win.sh
 
