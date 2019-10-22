@@ -45,3 +45,4 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 " F11 opens the declared highlight groups
 map <F11> :so $VIMRUNTIME/syntax/hitest.vim<CR>
 
+nnoremap ,,e :e!<CR>
