@@ -10,6 +10,7 @@
 :set -Wno-unused-do-bind
 :set -Wno-unused-imports
 :set -Wno-type-defaults
+:set -Wno-orphans
 :set -XOverloadedStrings
 :set -XArrows
 :set -XDataKinds
