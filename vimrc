@@ -15,6 +15,9 @@ au filetype haskell source ~/.vim/haskell.vim
 
 au filetype ruby set sw=2
 
+map t gt
+map T gT
+
 map <C-W><C-T> :term<CR>
 nmap <C-c> :q<CR>
 
