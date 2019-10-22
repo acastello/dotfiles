@@ -12,6 +12,9 @@
 :set -Wno-type-defaults
 :set -XOverloadedStrings
 :set -XArrows
+:set -XDataKinds
+:set -XKindSignatures
+:set -XTypeOperators
 :set +t
 :set +m
 :set prompt "\ESC[1;37m\STX%s> \ESC[m\STX"
