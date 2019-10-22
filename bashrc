@@ -261,16 +261,10 @@ alias man='MANPAGER="vim +MANPAGE -" man'
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias feh='feh -F.'
-alias ebin='vim'
 alias emacs='emacs -nw -Q'
-alias ncmpcpp='ncmpcpp --config $HOME/.ncmpcpp/config'
-alias pacman='pacman --color=auto'
-alias epoch='date +%s'
-alias lsblkv='lsblk -o NAME,MAJ:MIN,RM,SIZE,RO,TYPE,FSTYPE,STATE,MOUNTPOINT,UUID'
-alias i3exit='i3-msg exit'
+alias lsblkv='lsblk -o NAME,RM,SIZE,TYPE,FSTYPE,MOUNTPOINT,LABEL,UUID'
 alias aurman='aurman --noconfirm'
 alias ffmpeg='ffmpeg -hide_banner'
-alias v=vim
 alias v-json='vim -c ":set ft=json"'
 
 # nu, not v. as in ν-tify
