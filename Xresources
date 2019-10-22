@@ -6,7 +6,7 @@ Xft.hinting: 0
 Xft.antialias: 1
 Xft.rgba: rgb
 
-Xcursor.size: 32
+Xcursor.size: 28
 
 ! terminal font --------------------------------------------------------------
 *font: xft: Inconsoliga: pixelsize=15px: antialas=true
