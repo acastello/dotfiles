@@ -9,12 +9,6 @@ set siso=10
 set cwh=15
 set laststatus=2
 
-au BufNewFile,BufRead *.kt set filetype=kotlin
-
-au filetype haskell source ~/.vim/haskell.vim
-
-au filetype ruby set sw=2
-
 map t gt
 map T gT
 
