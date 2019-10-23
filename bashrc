@@ -209,15 +209,21 @@ HISTSIZE=
 HISTFILESIZE=
 HISTCONTROL=ignorespace
 
-__ps1_hostname='\[\e[40m\]$(
+__ps1_hostname='$(
 EC=$?
-if [ -v SSH_CLIENT ] ; then
-    echo '\''\[\e[1;31m\]\u\[\e[37m\]@\[\e[31m\]\h '\''
-elif [ $EC -ne 0 ]; then
+if [ $EC -ne 0 ]; then
     printf '\''\[\e[1;37;41m\]'\''"%-3s" $EC
     EC=0
+fi
+printf '\''\[\e[1;40;31m\]'\''
+case $SHLVL in
+    [0-2]) printf " ";;
+    *) printf "▎";;
+esac
+if [ -v SSH_CLIENT ] ; then
+    echo '\''\u\[\e[37m\]@\[\e[31m\]\h '\''
 else
-    echo '\''\[\e[1;31m\] ~ '\''
+    echo '\''~ '\''
 fi)'
 __ps1_pwd='\[\e[1;34;40m\]$(
 RWD="${PWD##*/}"
