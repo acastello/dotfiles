@@ -6,19 +6,14 @@
     status = auto
     branch = auto
 [alias]
-    st = status
-    ci = commit
-    co = checkout
-    br = branch
-    serve = daemon --reuseaddr --verbose  --base-path=. --verbose --export-all ./.git
+    pin = "!f() { H="pin$(git rev-parse --short HEAD)"; for i in "$@"; do cp -v "$i" "$H.$i"; done; }; f"
+    # serve = daemon --reuseaddr --verbose  --base-path=. --verbose --export-all ./.git
     fixup = !sh -c 'REV=$(git rev-parse $1) && git commit --fixup $@ && git rebase -i --autosquash $REV^' -
     squash = !sh -c 'REV=$(git rev-parse $1) && git commit --squash $@ && git rebase -i --autosquash $REV^' -
     push-review = "!git push origin HEAD:alejandro.castello"
-    purr = pull --rebase
     branch-name = rev-parse --abbrev-ref HEAD
     publish = "!git push -u origin $(git branch-name)"
-    please = "!git push --force-with-lease origin $(git branch-name)"
-    pls = "!git please"
+    pls = "!git push --force-with-lease origin $(git branch-name)"
     ls = log --graph --abbrev-commit --oneline
     camend = commit --amend --no-edit
     my-notes = !$EDITOR "$(git rev-parse --show-toplevel | sed 's \\(.*\\)/ \\1/.notes. ')"/notes
@@ -35,14 +30,15 @@
     stat = true
 [diff]
     color-words = true
+    mnemonicprefix = true
 [rebase]
     autostash = true
+[status]
+    short = true
 [pull]
     rebase = true
 [pretty]
     ls = %C(yellow)%h%Creset %<(18,mtrunc)%aN %C(auto)% D %s %C(cyan)%cr
-[credential "https://git.daimler.com/"]
-    helper = store
 
 [hub]
 	protocol = https
