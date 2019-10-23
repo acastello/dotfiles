@@ -38,6 +38,7 @@ c.url.searchengines['goes'] = "https://golang.org/search?q={}"
 c.url.searchengines['4'] =    "http://boards.4chan.org/{}"
 c.url.searchengines['c?'] =   "https://dictionary.cambridge.org/dictionary/english/{}"
 c.url.searchengines['de-v'] = "http://www.verbix.com/webverbix/German/{}.html"
+c.url.searchengines['hackage'] = "https://hackage.haskell.org/package/{}"
 c.hints.chars = "1234QWERASDFZXC"
 c.keyhint.delay = 200
 c.tabs.padding['top'] = 2
