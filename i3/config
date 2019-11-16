@@ -333,6 +333,7 @@ mode "cursor" {
     bindsym Prior         exec xdotool click 4
     bindcode --release 105 exec xdotool click 1
     bindcode --release Ctrl+105 exec xdotool click 1
+    bindcode --release Shift+105 exec xdotool click 3
     bindsym Mod5+Escape   mode "default"
 }
 bindsym Mod5+c mode "cursor"
@@ -568,8 +569,9 @@ exec_always compton -b # --blur-kern '7,7,0.000003,0.000102,0.000849,0.001723,0.
 exec urxvt
 
 #simulate mouse click with Right Ctrl
-bindcode --release 105 exec xdotool click 1
-bindcode --release Mod2+105 exec xdotool click 3
+bindcode --release       105 exec xdotool click 1
+bindcode --release  Mod2+105 exec xdotool click 3
+bindcode --release Shift+105 exec xdotool click 3
 
 
 bindsym Mod4+w exec "wew norwow"
