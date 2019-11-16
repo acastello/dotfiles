@@ -18,5 +18,7 @@
 :set -XTypeOperators
 :set +t
 :set +m
+-- debugging env
+:set stop :list
 :set prompt "\ESC[1;37m\STX%s> \ESC[m\STX"
 
