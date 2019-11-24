@@ -495,13 +495,15 @@ mode "$randrmode" {
     bindsym Escape mode "default"
     bindsym Tab mode "default"
     bindsym Return mode "default"
-    bindsym 1 exec "xrandr --output DP2 --auto --right-of eDP1" ; mode "default"
-    bindsym grave exec "xrandr --auto" ; mode "default"
+    bindsym grave exec "xrandr --output DP2 --auto" ; mode "default"
+    bindsym 1 exec "xrandr --output DP2 --auto; xrandr --output DP2 --right-of eDP1; feh --bg-scale ~/pictures/bg00.jpg" ; mode "default"
+    bindsym 2 exec "xrandr --output DP2 --auto --left-of eDP1; feh --bg-scale ~/pictures/bg00.jpg" ; mode "default"
+    bindsym 3 exec "xrandr --output DP2 --auto --above eDP1; feh --bg-scale ~/pictures/bg00.jpg" ; mode "default"
     bindsym 4 exec "xrandr --output DP2 --auto" ; mode "default"
-    bindsym Up exec "xrandr --output DP2 --rotate normal" ; mode "default"
-    bindsym Down exec "xrandr --output DP2 --rotate inverted" ; mode "default"
-    bindsym Left exec "xrandr --output DP2 --rotate left" ; mode "default"
-    bindsym Right exec "xrandr --output DP2 --rotate right" ; mode "default"
+    bindsym Up exec "xrandr --output eDP1 --rotate normal" ; mode "default"
+    bindsym Down exec "xrandr --output eDP1 --rotate inverted" ; mode "default"
+    bindsym Left exec "xrandr --output eDP1 --rotate left" ; mode "default"
+    bindsym Right exec "xrandr --output eDP1 --rotate right" ; mode "default"
 }
 bindcode Mod4+31 mode "$randrmode"
 
@@ -513,7 +515,7 @@ mode audio {
     bindsym 1 exec "pactl-default-sink.sh 1" ; mode "default"
     bindsym 2 exec "pactl-default-sink.sh 2" ; mode "default"
     bindsym 3 exec "pactl-default-sink.sh 3" ; mode "default"
-    bindsym r exec "pactl unload-module module-tunnel-sink-new; pactl load-module module-tunnel-sink-new server=w520 sink_name=remote; pactl set-default-sink remote" ; mode "default"
+    bindsym r exec "pactl unload-module module-tunnel-sink-new; pactl load-module module-tunnel-sink-new server=alex-ganooarx sink_name=remote; pactl set-default-sink remote" ; mode "default"
 
 }
 bindsym Mod4+a mode audio
@@ -579,7 +581,7 @@ smart_gaps yes
 exec_always setxkbmap -layout us \
     ; xmodmap ~/.Xmodmap \
     ; xrandr --dpi 96 \
-    ; xrandr --output $hdmi --auto --primary --pos 1920x0 --output $screen --pos 0x1020 \
+    ; xrandr --auto --output eDP1 --primary \
     ; feh --bg-scale ~/pictures/bg00.jpg \
     ; xset dpms 300 \
     ; xset r rate 200 50
@@ -619,7 +621,7 @@ bindcode --release  Mod2+105 exec xdotool click 3
 bindcode --release Shift+105 exec xdotool click 3
 
 
-bindsym Mod4+w exec "wew norwow"
+bindsym --release Mod4+w exec "wew portal"
 
 
 # 2 terminals in ws 1
@@ -677,6 +679,7 @@ for_window [window_role="Msgcompose"] floating enable
 assign [class="Steam"] workspace 302:◆2
 assign [class="jetbrains-idea"] workspace 103:F3
 assign [class="discord"] workspace 303:◆3
+assign [class="mpv"] output DP2
 
 client.focused #00b0ef #00b0ef #212121 #a4f7ff
 client.focused_inactive #212121 #212121 #00b0ef #183B48
