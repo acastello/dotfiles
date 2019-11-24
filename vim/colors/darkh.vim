@@ -12,7 +12,7 @@ hi NonText	        ctermfg=blue
 hi Directory	    ctermfg=blue
 hi ErrorMsg	        ctermbg=darkred     ctermfg=white
 hi IncSearch	    cterm=reverse
-hi Search	        ctermbg=yellow      ctermfg=black
+hi Search	        ctermbg=black       ctermfg=NONE    cterm=underline
 hi MoreMsg	        ctermfg=green
 hi ModeMsg	        ctermfg=None        cterm=bold
 hi LineNr	        ctermfg=yellow

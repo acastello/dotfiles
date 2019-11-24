@@ -4,13 +4,23 @@ setlocal cm=blowfish2
 
 set clipboard=unnamedplus
 
+" positioning
+set cul
+set relativenumber
+set nu
+
+" dimensions
 set so=7
 set siso=10
 set cwh=15
 set laststatus=2
+set winwidth=80 winheight=24
+set winminwidth=12 winminheight=2
 
 map t gt
 map T gT
+
+set hlsearch
 
 map <C-W><C-T> :term<CR>
 nmap <C-c> :q<CR>
