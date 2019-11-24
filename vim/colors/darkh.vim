@@ -77,3 +77,6 @@ hi LineNr           ctermfg=none ctermbg=none cterm=none
 hi CursorLineNr     ctermfg=none ctermbg=none cterm=none,bold
 hi StatusLineTerm   term=bold,reverse cterm=bold ctermfg=0 ctermbg=39
 " hi StatusLineTermNC
+
+" Custom groups
+hi ExtraWhitespace cterm=reverse ctermfg=DarkRed
