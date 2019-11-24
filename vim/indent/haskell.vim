@@ -27,7 +27,12 @@
 " * "<|>" indicates the cursor position after automatic indentation.
 " * "<*>" indicates the cursor position before automatic indentation.
 
-nnoremap X mc02r-<ESC>`c
+" original binding
+" noremap X mc02r-<ESC>`c
+nnoremap X mc0i-- <ESC>`c
+vnoremap X mc0I-- <ESC>`c
+
+noremap cx mc 03x`c
 
 if exists('b:did_indent')
   finish
@@ -91,7 +96,7 @@ function! GetHaskellIndent()
     if xs != []
       return len(xs[1])
     endif
-    
+
     " Case: 'case of' notation
     "   case a of
     "   ####<|>
