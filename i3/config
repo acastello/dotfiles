@@ -554,6 +554,8 @@ exec alsa-ctl init
 exec xss-lock -- i3lock -n -c 272D30 -i ~/pictures/screensaver.png
 bindsym --release Mod4+s exec xset dpms force off
 bindsym --release XF86Launch1 exec xset dpms force off
+bindsym --release XF86Tools exec pavucontrol
+bindsym --release XF86Explorer exec systemctl suspend
 
 bindsym XF86Calculator exec floating_ghci.sh
 bindsym Mod4+n exec floating_urxvt --geometry 80x24 -e ncmpcpp
