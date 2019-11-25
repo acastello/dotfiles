@@ -491,7 +491,7 @@ bar {
     tray_padding 1
 
     # separator
-    separator_symbol " │ "
+    separator_symbol "│"
 
     colors {
       separator #7d7d7d
