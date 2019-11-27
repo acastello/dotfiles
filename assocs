@@ -11,4 +11,5 @@ done
 unset files[assocs] \
       files[diff] \
       files[ln] \
-      files[ls]
+      files[ls] \
+      files[.gitignore]
