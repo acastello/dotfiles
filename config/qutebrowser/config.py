@@ -38,7 +38,8 @@ c.url.searchengines['goes'] = "https://golang.org/search?q={}"
 c.url.searchengines['4'] =    "http://boards.4chan.org/{}"
 c.url.searchengines['c?'] =   "https://dictionary.cambridge.org/dictionary/english/{}"
 c.url.searchengines['de-v'] = "http://www.verbix.com/webverbix/German/{}.html"
-c.url.searchengines['hackage'] = "https://hackage.haskell.org/package/{}"
+c.url.searchengines['w3'] = "https://duckduckgo.com/?q={} site:w3schools.com"
+c.url.searchengines['hackg'] =   "https://hackage.haskell.org/package/{}"
 c.hints.chars = "1234QWERASDFZXC"
 c.keyhint.delay = 200
 c.tabs.padding['top'] = 2
@@ -74,7 +75,7 @@ config.bind('q`',                   'tab-focus 5')
 config.bind('w`',                   'tab-focus 6')
 config.bind('e`',                   'tab-focus 7')
 config.bind('r`',                   'tab-focus 8')
-config.bind('<Tab>',                'hint')
+config.bind('<Tab>',                'hint images')
 config.bind('<Ctrl-1>',             'tab-focus 1')
 config.bind('<Ctrl-2>',             'tab-focus 2')
 config.bind('<Ctrl-3>',             'tab-focus 3')
