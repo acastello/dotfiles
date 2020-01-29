@@ -594,7 +594,7 @@ bindsym Mod4+w exec "wew norwow"
 # #       isn't want you want see the ROLE section, below.
 # # Tip: To find out what these values might be run:
 # #       xprop | grep -i 'class'
-for_window [title="_floating_wildcard"] floating enable
+for_window [title="_floating_wildcard"] floating enable # , move position mouse
 for_window [class="Xephyr"] floating disable
 for_window [class="File-roller"] floating enable
 for_window [class="P88110_64"] floating enable
@@ -619,6 +619,10 @@ for_window [title="TEKKEN 7 "] floating enable
 # #       xprop | grep -i 'role'#
 for_window [window_role="conversation"] floating enable
 for_window [window_role="Msgcompose"] floating enable
+
+assign [class="Steam"] workspace 302:◆2
+assign [class="jetbrains-idea"] workspace 103:F3
+assign [class="discord"] workspace 303:◆3
 
 client.focused #00b0ef #00b0ef #212121 #a4f7ff
 client.focused_inactive #212121 #212121 #00b0ef #183B48
