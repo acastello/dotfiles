@@ -32,4 +32,9 @@ keycode 85  = dead_stroke       KP_6 KP_Right KP_6
 keycode 79  = dead_caron        KP_7 KP_Home KP_7
 keycode 80  = dead_greek        KP_8 KP_Up KP_8
 keycode 81  = dead_currency     KP_9 KP_Prior KP_9
-! keycode 204 = Alt_L
+keycode 204 = Alt_L
+
+! work around broken g, h, alt
+! keysym Control_L = ISO_Level3_Shift
+! keysym F7 = g
+! keysym F8 = h
