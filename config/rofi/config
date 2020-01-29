@@ -1,3 +1,4 @@
 rofi.modi: run,window,workspace:i3workspace.sh
 rofi.font: monospace 14
 rofi.theme: ~/.local/share/rofi/Darkh.rasi
+rofi.max-history-size: 400
