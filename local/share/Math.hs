@@ -2,6 +2,7 @@ module Math where
 
 import Data.Bits
 import Data.List as L
+import Data.Ratio
 import Data.Word
 
 import Debug.Trace
@@ -52,6 +53,9 @@ instance Num Hex where
                         f rem' (fromInteger byte' : stack)
                     else
                         (fromInteger byte' : stack)
+
+multHex :: Rational -> Hex -> Hex
+multHex a = opHex (\_ b -> fromInteger $ fromIntegral b * numerator a `quot` denominator a) 0
 
 opHex :: (Int -> Int -> Int) -> Hex -> Hex -> Hex
 opHex op (Hex xs) (Hex ys) = Hex $ (\x -> if x > 0xff then 0xff else x) <$>
