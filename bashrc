@@ -29,7 +29,7 @@ bind '"\C-b.":      " . ~/.bashrc\n"'                # source ~/.bashrc
 bind '"\C-bn":      "\C-aν "'
 bind '"\e8":        insert-completions'
 bind -x '"\C-xy":   "echo -n $READLINE_LINE | xclip; echo -\>yanked"'
-bind '"\e[24~":     "\C-p\C-l\r"'
+bind '"\e[24~":     "\C-p\C-a \C-l\r"'
 # find
 bind '"\C-f":       "\C-afind -iname \e\C-f"'
 bind '"\e\C-f":       abort'
@@ -132,6 +132,7 @@ bind '"\e\C-g-l":         "log --format=ls --graph --name-only\n"'
 bind '"\e\C-g\C-L":       "log --format=ls --graph --all\n"'
 bind '"\e\C-gb":          "branch -D "'
 bind '"\e\C-gr":          "rebase \e\C-g\er"'
+bind '"\e\C-g\er":          abort'
 bind '"\e\C-g\eri":         "-i \e\C-g\er"'
 bind '"\e\C-g\erm":         "master\n"'
 bind '"\e\C-g\er\C-m":      "origin/master\n"'
@@ -274,6 +275,7 @@ alias lsblkv='lsblk -o NAME,RM,SIZE,TYPE,FSTYPE,MOUNTPOINT,LABEL,UUID'
 alias aurman='aurman --noconfirm'
 alias ffmpeg='ffmpeg -hide_banner'
 alias v-json='vim -c ":set ft=json"'
+alias TODO='vim ~/TODO.md'
 
 # nu, not v. as in ν-tify
 ν() {
