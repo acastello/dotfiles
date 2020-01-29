@@ -11,6 +11,17 @@ add Control = Control_L
 ! Pause -> Caps_Lock
 keycode 127 = Caps_Lock
 
+!!! Spelunky numpad workaround
+! keycode 91  = F13            KP_Decimal KP_Delete KP_Decimal
+! keycode 87  = F14        KP_1 KP_End KP_1
+! keycode 88  = F15        KP_2 KP_Down KP_2
+! keycode 89  = F16        KP_3 KP_Next KP_3
+! keycode 83  = F10   KP_4 KP_Left KP_4
+! keycode 84  = F9    KP_5 KP_Begin KP_5
+! keycode 85  = F8       KP_6 KP_Right KP_6
+! keycode 79  = F20        KP_7 KP_Home KP_7
+! keycode 80  = F11        KP_8 KP_Up KP_8
+! keycode 81  = F22     KP_9 KP_Prior KP_9
 keycode 91  = ssharp            KP_Decimal KP_Delete KP_Decimal
 keycode 87  = dead_grave        KP_1 KP_End KP_1
 keycode 88  = dead_acute        KP_2 KP_Down KP_2
