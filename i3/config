@@ -65,6 +65,7 @@ bindsym Mod4+Alt_R exec --no-startup-id bashrun
 bindsym Mod5+Tab exec --no-startup-id rofi -show window
 bindsym Mod4+Tab exec --no-startup-id rofi -show workspace
 bindsym Mod5+d exec --no-startup-id rofi -show 'pipe clipboard:pipeclip.sh'
+bindsym Mod5+slash exec pastables.sh
 
 bindsym Mod4+c exec clip-by-win.sh
 
