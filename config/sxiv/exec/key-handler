@@ -56,6 +56,12 @@ case "$KEY" in
                 realpath "$file" | xclip -r -selection clipboard
             done
             ;;
+"m")        while read file; do
+                find "$HOME/pictures/reaction" -type d -printf "%P\n"  \
+                    | sort | rofi -p "move to" -dmenu -i  \
+                    | xargs -I{} mv "$file" "$HOME/pictures/reaction/{}"
+            done
+            ;;
 "C-e")      while read file; do urxvt -bg "#444" -fg "#eee" -sl 0 -title "$file" -e sh -c "exiv2 pr -q -pa '$file' | less" & done ;;
 "C-g")      tr '\n' '\0' | xargs -0 gimp & ;;
 "C-comma")  rotate 270 ;;
