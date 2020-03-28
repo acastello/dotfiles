@@ -64,9 +64,10 @@ bindsym Mod5+Alt_R exec --no-startup-id rofi -show run
 bindsym Mod4+Alt_R exec --no-startup-id bashrun
 bindsym Mod5+Tab exec --no-startup-id rofi -show window
 bindsym Mod4+Tab exec --no-startup-id rofi -show workspace
+bindsym Mod4+d exec --no-startup-id xdotool click --delay 200 3 key --delay 20 Down Down Down Down Down key --delay 90 Down Return && exec rofi -show 'pipe clipboard:pipeclip.sh'
 bindsym Mod5+d exec --no-startup-id rofi -show 'pipe clipboard:pipeclip.sh'
 bindsym Mod5+slash exec pastables.sh
-
+bindsym Mod5+Next exec "find ~/pictures/reaction/ -type d | rofi -dmenu | while read -r folder; do sxiv-mtime \\"$folder\\"; done"
 bindsym Mod4+c exec clip-by-win.sh
 
 # change focus
