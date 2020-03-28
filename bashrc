@@ -15,6 +15,7 @@ bind '"\e\M-\\\t": "\e\\\n"'
 # movement
 bind '"\eH": shell-backward-word'
 bind '"\eL": shell-forward-word'
+bind '"\e[1;3A": " ..\n"'
 
 # copy CWD
 bind '"\C-xw": "pwd | sed 's.$./.' | xclip -r \n"'
