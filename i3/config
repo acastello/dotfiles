@@ -46,9 +46,9 @@ bindsym Mod4+e exec thunar
 
 # bindsym Mod4+c exec copyq show
 
-bindsym Mod4+4 exec click2kill -19
-bindsym Mod4+5 exec click2kill -18
-bindsym Mod4+6 exec click2kill
+bindsym Mod4+4 exec kill -19 "$(xdotool getactivewindow getwindowpid)"
+bindsym Mod4+5 exec kill -18 "$(xdotool getactivewindow getwindowpid)"
+bindsym Mod4+6 exec kill     "$(xdotool getactivewindow getwindowpid)"
 
 # start a terminal
 bindsym Mod5+Return exec urxvt
