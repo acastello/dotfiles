@@ -248,10 +248,14 @@ else
 fi)'
 __ps1_git='\[\e[1;36m\]$(
 b="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
+if [ -n "$b" ]; then
+    git diff-files --quiet ||
+        echo -n '\''\[\e[21m\]'\''
+fi
 if [ "$b" = master ]; then
     echo " µ"
 elif [ "$b" = HEAD ]; then
-    echo " ĥ"
+    echo " @"
 elif [ -n "$b" ]; then
     echo " $b"
 fi)'
