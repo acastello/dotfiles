@@ -45,7 +45,6 @@ c.keyhint.delay = 200
 c.tabs.padding['top'] = 2
 c.tabs.padding['bottom'] = 2
 c.fonts.hints = "11px monospace"
-c.fonts.tabs = "12px monospace"
 
 c.colors.completion.fg = xress['*foreground']
 c.colors.completion.odd.bg = "#444F54"
@@ -75,7 +74,7 @@ config.bind('q`',                   'tab-focus 5')
 config.bind('w`',                   'tab-focus 6')
 config.bind('e`',                   'tab-focus 7')
 config.bind('r`',                   'tab-focus 8')
-config.bind('<Tab>',                'hint images')
+config.bind('<Tab>',                'hint images tab')
 config.bind('<Ctrl-1>',             'tab-focus 1')
 config.bind('<Ctrl-2>',             'tab-focus 2')
 config.bind('<Ctrl-3>',             'tab-focus 3')
