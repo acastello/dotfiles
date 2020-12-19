@@ -73,6 +73,9 @@ valueAt (t0, c0) (t1, c1) t = opHex (\b0 b1 -> floor (lhv b0 + rhv b1)) c0 c1
     rhv b1 = (t1 - t) / tot * (fi b1)
     tot = (t1 - t0)
 
+hexToRGB1 :: Hex -> [Double]
+hexToRGB1 = fmap (\x -> fromIntegral x / 0xff) . hexValues
+
 
 fi :: (Integral a, Num b) => a -> b
 fi = fromIntegral
