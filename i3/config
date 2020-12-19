@@ -70,6 +70,9 @@ bindsym Mod5+slash exec pastables.sh
 bindsym Mod5+Next exec "find ~/pictures/reaction/ -type d | rofi -dmenu | while read -r folder; do sxiv-mtime \\"$folder\\"; done"
 bindsym Mod4+c exec clip-by-win.sh
 
+bindsym Mod5+bracketright exec "lag 2000; notify-send 'lagging for 2s'"
+bindsym Mod5+bracketleft  exec "lag; notify-send 'lag off'"
+
 # simulate unavailable keys
 bindsym --whole-window Mod5+button4 workspace next_on_output
 bindsym --whole-window Mod5+button5 workspace prev_on_output
