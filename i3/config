@@ -59,6 +59,7 @@ bindsym Ctrl+Mod4+Return exec konsole
 bindsym Mod5+Shift+q kill
 
 # rofi modi
+bindsym Ctrl+Mod5+Alt_R exec --no-startup-id rofi -show run
 bindsym Mod5+Alt_R exec --no-startup-id rofi -show run
 bindsym Mod4+Alt_R exec --no-startup-id bashrun
 bindsym Mod5+Tab exec --no-startup-id rofi -show window
@@ -68,6 +69,10 @@ bindsym Mod5+d exec --no-startup-id rofi -show 'pipe clipboard:pipeclip.sh'
 bindsym Mod5+slash exec pastables.sh
 bindsym Mod5+Next exec "find ~/pictures/reaction/ -type d | rofi -dmenu | while read -r folder; do sxiv-mtime \\"$folder\\"; done"
 bindsym Mod4+c exec clip-by-win.sh
+
+# simulate unavailable keys
+bindsym --whole-window Mod5+button4 workspace next_on_output
+bindsym --whole-window Mod5+button5 workspace prev_on_output
 
 # change focus
 bindsym Mod5+$left focus left
@@ -93,6 +98,9 @@ bindsym Mod5+Shift+Down move down
 bindsym Mod5+Shift+Up move up
 bindsym Mod5+Shift+Right move right
 
+# start with tabbed by default
+workspace_layout tabbed
+
 # split in horizontal orientation
 bindsym Mod5+b split h
 
@@ -100,6 +108,7 @@ bindsym Mod5+b split h
 bindsym Mod5+v split v
 
 # enter fullscreen mode for the focused container
+bindsym Mod4+f --release fullscreen
 bindsym Mod5+f --release fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
@@ -335,7 +344,8 @@ mode "cursor" {
     bindcode --release 105 exec xdotool click 1
     bindcode --release Ctrl+105 exec xdotool click 1
     bindcode --release Shift+105 exec xdotool click 3
-    bindsym Mod5+Escape   mode "default"
+    bindsym Mod5+Escape mode "default"
+    bindsym Mod5+Tab    mode "default"
 }
 bindsym Mod5+c mode "cursor"
 
@@ -371,8 +381,9 @@ mode "resize" {
     bindsym Mod4+Right   resize grow width 1 px
 
     # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    bindsym Return   mode "default"
+    bindsym Escape   mode "default"
+    bindsym Mod5+Tab mode "default"
 }
 
 bindsym Mod5+r mode "resize"
@@ -405,13 +416,15 @@ mode "resize gaps" {
 
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
+    bindsym Tab    mode "default"
 
 }
 
 bindsym Mod4+g mode "resize gaps"
 
 mode "passthrough" {
-	bindsym Mod5+Escape 	mode "default"
+	bindsym Mod5+Escape mode "default"
+    bindsym Mod5+Tab    mode "default"
 }
 
 bindsym Mod4+p		mode "passthrough"
@@ -461,6 +474,7 @@ bindsym --release Mod5+apostrophe exec xdotool key dead_acute
 set $layoutmode Select Layout: 1-US, 2-ES, 3-DE, 4-RU, 5-GR, 6-RS, 7-IL
 mode "$layoutmode" {
     bindsym Escape mode "default"
+    bindsym Tab mode "default"
     bindsym Return mode "default"
     bindsym 1 exec "setxkbmap -layout us ; xmodmap ~/.Xmodmap" ; mode "default"
     bindsym 2 exec "setxkbmap -layout es ; xmodmap ~/.Xmodmap" ; mode "default"
@@ -479,8 +493,10 @@ bindcode Mod4+32 mode "$layoutmode"
 set $randrmode Select Layout: M-S S-M S^M auto
 mode "$randrmode" {
     bindsym Escape mode "default"
+    bindsym Tab mode "default"
     bindsym Return mode "default"
     bindsym 1 exec "xrandr --output DP2 --auto --right-of eDP1" ; mode "default"
+    bindsym grave exec "xrandr --auto" ; mode "default"
     bindsym 4 exec "xrandr --output DP2 --auto" ; mode "default"
 }
 bindcode Mod4+31 mode "$randrmode"
