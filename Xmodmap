@@ -2,6 +2,7 @@ add mod3    = Scroll_Lock
 add mod4    = Tab
 add mod3    = Menu
 add mod3    = Prior
+add mod3    = Next
 remove mod1 = Alt_L
 keysym Alt_L = ISO_Level3_Shift
 remove Lock = Caps_Lock
