@@ -471,21 +471,22 @@ bindsym Mod4+p		mode "passthrough"
 
 # bindsym Mod5+Shift+p mode "movement"
 
-bindsym --release Mod5+semicolon exec xdotool key ntilde
-bindsym --release Mod5+apostrophe exec xdotool key dead_acute
+bindsym --release Mod5+semicolon   exec xdotool key ntilde
+bindsym --release Mod5+backslash   exec xdotool key dead_diaeresis
+bindsym --release Mod5+apostrophe  exec xdotool key dead_acute
 
 set $layoutmode Select Layout: 1-US, 2-ES, 3-DE, 4-RU, 5-GR, 6-RS, 7-IL
 mode "$layoutmode" {
     bindsym Escape mode "default"
     bindsym Tab mode "default"
     bindsym Return mode "default"
-    bindsym 1 exec "setxkbmap -layout us ; xmodmap ~/.Xmodmap" ; mode "default"
-    bindsym 2 exec "setxkbmap -layout es ; xmodmap ~/.Xmodmap" ; mode "default"
-    bindsym 3 exec "setxkbmap -layout de ; xmodmap ~/.Xmodmap" ; mode "default"
-    bindsym 4 exec "setxkbmap -layout ru ; xmodmap ~/.Xmodmap" ; mode "default"
-    bindsym 5 exec "setxkbmap -layout gr ; xmodmap ~/.Xmodmap" ; mode "default"
-    bindsym 6 exec "setxkbmap -layout rs ; xmodmap ~/.Xmodmap" ; mode "default"
-    bindsym 7 exec "setxkbmap -layout il ; xmodmap ~/.Xmodmap" ; mode "default"
+    bindsym 1 exec "setxkbmap -layout us ; xmodmap ~/.Xmodmap ; xset r rate 200 50" ; mode "default"
+    bindsym 2 exec "setxkbmap -layout es ; xmodmap ~/.Xmodmap ; xset r rate 200 50" ; mode "default"
+    bindsym 3 exec "setxkbmap -layout de ; xmodmap ~/.Xmodmap ; xset r rate 200 50" ; mode "default"
+    bindsym 4 exec "setxkbmap -layout ru ; xmodmap ~/.Xmodmap ; xset r rate 200 50" ; mode "default"
+    bindsym 5 exec "setxkbmap -layout gr ; xmodmap ~/.Xmodmap ; xset r rate 200 50" ; mode "default"
+    bindsym 6 exec "setxkbmap -layout rs ; xmodmap ~/.Xmodmap ; xset r rate 200 50" ; mode "default"
+    bindsym 7 exec "setxkbmap -layout il ; xmodmap ~/.Xmodmap ; xset r rate 200 50" ; mode "default"
     bindsym --release minus exec xdotool key ssharp ; mode "default"
     bindsym --release grave exec xdotool key masculine ; mode "default"
     bindsym --release semicolon exec xdotool key ntilde ; mode "default"
