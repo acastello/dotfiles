@@ -1,0 +1,8 @@
+bind: meta-j control-a control-k : r e l o a d ! return
+bind: meta-t h s p e c ( s p e c ) return
+bind: meta-e : e return
+bind: meta-s : s t e p return
+bind: meta-x : s t e p l o c a l return
+bind: meta-l : l i s t return
+maxhistorysize: Just 200000
+historyDuplicates: IgnoreConsecutive
