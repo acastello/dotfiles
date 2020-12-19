@@ -37,6 +37,7 @@ bind '"\e\C-f":       abort'
 bind '"\e\C-f\r":     "\C-w\n"'
 bind '"\e\C-f1":      "\C-w-maxdepth 1 -iname \e\C-f"'
 bind '"\e\C-f2":      "\C-w-maxdepth 2 -iname \e\C-f"'
+bind '"\e\C-f3":      "\C-w-maxdepth 3 -iname \e\C-f"'
 bind '"\e\C-f-":      "\C-w-not -path \e\C-f\e-"'
 bind '"\e\C-f\e-g":     "\\*/.git\\*\e[C -iname \e\C-f"'
 bind '"\e\C-f\e-v":     "\\*/vendor/\\*\e[C\e[C -iname \e\C-f"'
@@ -45,7 +46,7 @@ bind '"\e\C-fg":      "\C-w-type f -exec grep -HnI --color=always  {} \\;\e[D\e[
 bind '"\e\C-f\\":      "\\*\\*\e[D\e[D"'
 bind '"\e\C-f.":      "\\*\\\\."'
 # grep
-bind '"\eg":        "grep \e\M-g"'
+bind '"\eg":        " | grep \e\M-g"'
 bind '"\e\M-gc":    "--color=always \e\M-g"'
 # kubectl
 bind '"\C-k":             "kubectl \e\C-k"'
