@@ -51,9 +51,8 @@ bindsym Mod4+5 exec kill -18 "$(xdotool getactivewindow getwindowpid)"
 bindsym Mod4+6 exec kill     "$(xdotool getactivewindow getwindowpid)"
 
 # start a terminal
-bindsym Mod5+Return exec urxvt
-bindsym Mod4+Return exec floating_urxvt # urxvt -title floating_urxvt -geometry 80x40
-for_window [instance="urxvt" title="_floating_urxvt"] floating enable, move position mouse
+bindsym Mod5+Return exec tabbed -ps+1 -c -r 2 st -w ''
+bindsym Mod4+Return exec tabbed -ps+1 -c -n _floating_wildcard -g 644x388 -r 2 st -w ''
 bindsym Ctrl+Mod4+Return exec konsole
 
 # kill focused window
@@ -569,7 +568,7 @@ bindsym --release XF86Tools exec pavucontrol
 bindsym --release XF86Explorer exec systemctl suspend
 
 bindsym XF86Calculator exec floating_ghci.sh
-bindsym Mod4+n exec floating_urxvt --geometry 80x24 -e ncmpcpp
+bindsym Mod4+n exec st -T _floating_wildcard -g 80x24 -e ncmpcpp
 
 # bindsym --release Mod4+w exec spam
 bindsym Print exec scrot
@@ -579,7 +578,6 @@ bindsym --release Ctrl+Print exec "sleep 0.25 ; selscrot -d 0.5 -s"
 # compton
 exec_always compton -b # --blur-kern '7,7,0.000003,0.000102,0.000849,0.001723,0.000849,0.000102,0.000003,0.000102,0.003494,0.029143,0.059106,0.029143,0.003494,0.000102,0.000849,0.029143,0.243117,0.493069,0.243117,0.029143,0.000849,0.001723,0.059106,0.493069,0.493069,0.059106,0.001723,0.000849,0.029143,0.243117,0.493069,0.243117,0.029143,0.000849,0.000102,0.003494,0.029143,0.059106,0.029143,0.003494,0.000102,0.000003,0.000102,0.000849,0.001723,0.000849,0.000102,0.000003'
 
-exec urxvt
 
 #simulate mouse click with Right Ctrl
 bindcode --release       105 exec xdotool click 1
@@ -606,6 +604,9 @@ bindsym Mod4+w exec "wew norwow"
 # # Tip: To find out what these values might be run:
 # #       xprop | grep -i 'class'
 for_window [title="_floating_wildcard"] floating enable # , move position mouse
+for_window [class="_floating_wildcard"] floating enable # , move position mouse
+for_window [title="_sticky_wildcard"] floating enable
+for_window [title="_sticky_wildcard"] sticky enable
 for_window [class="Xephyr"] floating disable
 for_window [class="File-roller"] floating enable
 for_window [class="P88110_64"] floating enable
