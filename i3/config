@@ -136,7 +136,7 @@ bindsym Mod5+Shift+minus move scratchpad
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym Mod5+minus scratchpad show
-bindsym Mod5+grave scratchpad show, [floating class="Brave-browser"] resize set 1100 615, move position center
+bindsym Mod5+grave scratchpad show, [floating class="Brave-browser"] resize set 1180 615, move position center
 
 # ┌─────────────┐
 # │  Workspace  │
@@ -641,7 +641,7 @@ for_window [title="CopyQ"] floating enable
 for_window [class="Display"] floating enable
 for_window [class="Vmg"] floating enable
 for_window [title="TEKKEN 7 "] floating enable
-for_window [floating class="Brave-browser"] resize set 1100 615
+for_window [floating class="Brave-browser"] resize set 1180 615
 for_window [class="Xdot"] fullscreen enable
 
 # `sticky` floating windows remain visible when you change workspaces
