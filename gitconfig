@@ -17,7 +17,7 @@
     ls = log --graph --abbrev-commit --oneline
     camend = commit --amend --no-edit
     my-notes = !$EDITOR "$(git rev-parse --show-toplevel | sed 's \\(.*\\)/ \\1/.notes. ')"/notes
-    serve = "!git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose"
+    serve = "!git daemon --base-path=.. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose"
 
 [core]
     editor = vim
@@ -26,8 +26,9 @@
 [push]
     default = tracking
 [merge]
-    tool = kdiff3
+	tool = vimdiff
     stat = true
+	conflictstyle = diff3
 [diff]
     color-words = true
     mnemonicprefix = true
@@ -44,3 +45,5 @@
 	protocol = https
 	host = git.daimler.com
 	reportCrash = never
+[mergetool]
+	prompt = false
