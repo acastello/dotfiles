@@ -28,10 +28,10 @@ hi Visual	        ctermbg=darkgray
 " hi WildMenu
 " hi Folded
 " hi FoldColumn
-" hi DiffAdd
-" hi DiffChange
-" hi DiffDelete
-" hi DiffText
+hi DiffAdd          ctermbg=28
+hi DiffChange       ctermbg=black
+hi DiffDelete       ctermbg=52          ctermfg=red
+hi DiffText         ctermbg=237
 " hi SignColumn
 " hi Conceal
 " hi SpellBad
