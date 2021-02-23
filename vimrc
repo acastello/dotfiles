@@ -7,6 +7,7 @@ set clipboard=unnamedplus
 
 " positioning
 set cul
+set cuc
 set relativenumber
 set nu
 

@@ -45,8 +45,8 @@ hi DiffText         ctermbg=237
 " hi TabLine
 " hi TabLineSel
 " hi TabLineFill
-" hi CursorColumn
-" hi CursorLine
+hi CursorColumn     ctermbg=236
+hi CursorLine       ctermbg=237 cterm=none
 " hi ColorColumn
 " hi StatusLineTerm
 " hi StatusLineTermNC
