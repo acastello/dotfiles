@@ -531,7 +531,8 @@ bar {
 }
 bindsym Mod4+b bar mode toggle
 
-bindsym Mod5+Shift+b border toggle
+bindsym Mod4+Shift+b border toggle 1
+bindsym Mod5+Shift+b border toggle 6
 
 # double click on Win+click 2bf
 bindsym Mod4+button1 --release --whole-window exec sleep 1; exec xdotool mouseup; exec xdotool click --repeat 2 1
