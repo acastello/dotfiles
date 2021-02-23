@@ -22,6 +22,8 @@
 :set -XTypeOperators
 :set -XTupleSections
 :set -XPartialTypeSignatures
+:set -XBlockArguments
+:set -XQuasiQuotes
 
 :set +t
 :set +m
