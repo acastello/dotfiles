@@ -1,5 +1,7 @@
 import subprocess
 
+config.load_autoconfig()
+
 def read_xresources(prefix):
     props = {}
     x = subprocess.run(['xrdb', '-query'], stdout=subprocess.PIPE)
