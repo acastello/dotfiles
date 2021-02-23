@@ -214,21 +214,26 @@ HISTSIZE=
 HISTFILESIZE=
 HISTCONTROL=ignorespace
 
+# TODO: handle ssh in small terminal
 __ps1_hostname='$(
 EC=$?
-if [ $EC -ne 0 ]; then
-    printf '\''\[\e[1;37;41m\]'\''"%-3s" $EC
-    EC=0
-fi
-printf '\''\[\e[1;40;31m\]'\''
-case $SHLVL in
-    [0-2]) printf " ";;
-    *) printf "▎";;
-esac
-if [ -v SSH_CLIENT ] ; then
-    echo '\''\u\[\e[37m\]@\[\e[31m\]\h '\''
+if [ $COLUMNS -lt 60 ] ; then
+    echo
 else
-    echo '\''~ '\''
+    if [ $EC -ne 0 ]; then
+        printf '\''\[\e[1;37;41m\]'\''"%-3s" $EC
+        EC=0
+    fi
+    printf '\''\[\e[1;40;31m\]'\''
+    case $SHLVL in
+        [0-2]) printf " ";;
+        *) printf "▎";;
+    esac
+    if [ -v SSH_CLIENT ] ; then
+        echo '\''\u\[\e[37m\]@\[\e[31m\]\h '\''
+    else
+        echo '\''~ '\''
+    fi
 fi)'
 __ps1_pwd='\[\e[1;34;40m\]$(
 RWD="${PWD##*/}"
@@ -241,10 +246,14 @@ else
         PRWD="~"
     [ "$PAWD" = "/$PRWD" ] &&
         PRWD="$PAWD"
-    if [ ${#PRWD} -gt 15 ]; then
-        echo "${PRWD::10}…"'\''\[\e[21;37m\]/\[\e[1;34m\]'\''"$RWD";
+    if [ $COLUMNS -lt 60 ]; then
+        echo "${RWD::1}"
     else
-        echo "${PRWD}"'\''\[\e[21;37m\]/\[\e[1;34m\]'\''"$RWD"
+        if [ ${#PRWD} -gt 15 ]; then
+            echo "${PRWD::10}…"'\''\[\e[21;37m\]/\[\e[1;34m\]'\''"$RWD";
+        else
+            echo "${PRWD}"'\''\[\e[21;37m\]/\[\e[1;34m\]'\''"$RWD"
+        fi
     fi
 fi)'
 __ps1_git='\[\e[1;36m\]$(
@@ -260,7 +269,13 @@ elif [ "$b" = HEAD ]; then
 elif [ -n "$b" ]; then
     echo " $b"
 fi)'
-__ps1_trail='\[\e[0;30m\]▓▒░\[\e[0m\] '
+__ps1_trail='$(
+if [ $COLUMNS -lt 60 ]; then
+    echo " \[\e[21;22;39;48;5;235m\]\$\[\e[49;38;5;235m\]▌\[\e[0m\]"
+else
+    echo "\[\e[0;30m\]▓▒░\[\e[0m\] "
+fi
+)'
 __ps1_k8s='$(
 kubectl config current-context 2>/dev/null
 )'
