@@ -587,7 +587,7 @@ bindsym --release XF86Explorer exec systemctl suspend
 bindsym XF86Calculator exec floating_ghci.sh
 bindsym Mod4+n exec st -T _floating_wildcard -g 80x24 -e ncmpcpp
 
-# bindsym --release Mod4+w exec spam
+bindsym --release Mod4+q exec "sleep 0.25; spam"
 bindsym Print exec scrot
 bindsym shift+Print exec selscrot -u
 bindsym --release Ctrl+Print exec "sleep 0.25 ; selscrot -d 0.5 -s"
