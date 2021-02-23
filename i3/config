@@ -302,10 +302,10 @@ bindsym Mod4+Mod5+l exec --no-startup-id "i3lock -i ~/pictures/screensaver.png ;
 bindsym XF86ScreenSaver exec --no-startup-id "i3lock -i ~/pictures/screensaver.png"
 bindsym Mod5+Mod4+s exec --no-startup-id "i3lock -i ~/pictures/screensaver.png ; sleep 0.5 ; systemctl suspend"
 # audio
-bindsym       XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -3%"
+bindsym       XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -4%"
 bindsym  Mod5+XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -1%"
 bindsym Shift+XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -15%"
-bindsym       XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +3%"
+bindsym       XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +4%"
 bindsym  Mod5+XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +1%"
 bindsym Shift+XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +15%"
 bindsym       XF86AudioMute        exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
