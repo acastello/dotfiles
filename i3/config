@@ -41,9 +41,6 @@ floating_modifier Mod5
 # open dwb
 # bindsym Mod5+e exec qutebrowser
 
-# thunar as windows explorer
-bindsym Mod4+e exec thunar
-
 # bindsym Mod4+c exec copyq show
 
 bindsym Mod4+4 exec kill -19 "$(xdotool getactivewindow getwindowpid)"
@@ -67,8 +64,7 @@ bindsym Mod4+Tab exec --no-startup-id rofi -show workspace
 bindsym Mod4+d exec --no-startup-id xdotool click --delay 200 3 key --delay 20 Down Down Down Down Down key --delay 90 Down Return && exec rofi -show 'pipe clipboard:pipeclip.sh'
 bindsym Mod5+d exec --no-startup-id rofi -show 'pipe clipboard:pipeclip.sh'
 bindsym Mod5+slash exec pastables.sh
-bindsym Mod5+Next exec "find ~/pictures/reaction/ -type d | rofi -dmenu | while read -r folder; do sxiv-mtime \\"$folder\\"; done"
-bindsym Mod4+c exec clip-by-win.sh
+bindsym Mod5+Next exec "{ echo /C/Pictures ; echo ~/Clover ; find ~/pictures/reaction/ -type d ;} | rofi -dmenu -i | while read -r folder; do sxiv-mtime \\"$folder\\"; done"
 
 bindsym Mod5+bracketright exec "lag 2000; notify-send 'lagging for 2s'"
 bindsym Mod5+bracketleft  exec "lag; notify-send 'lag off'"
@@ -297,7 +293,7 @@ bindsym Shift+Mod4+$Right move workspace to output right
 # reload the configuration file
 bindsym Mod5+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Mod4+r restart
+# bindsym Mod4+r restart
 bindsym Mod5+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym Mod5+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
