@@ -645,6 +645,8 @@ for_window [class="Xdot"] fullscreen enable
 # `sticky` floating windows remain visible when you change workspaces
 for_window [class="mpv"] sticky enable
 
+for_window [title="TigerVNC"] border none
+
 #
 # # by ROLE (WM_WINDOW_ROLE)
 # # Note: window_role is Typically useful for effecting child windows
