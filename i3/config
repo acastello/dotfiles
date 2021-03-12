@@ -498,6 +498,10 @@ mode "$randrmode" {
     bindsym 1 exec "xrandr --output DP2 --auto --right-of eDP1" ; mode "default"
     bindsym grave exec "xrandr --auto" ; mode "default"
     bindsym 4 exec "xrandr --output DP2 --auto" ; mode "default"
+    bindsym Up exec "xrandr --output DP2 --rotate normal" ; mode "default"
+    bindsym Down exec "xrandr --output DP2 --rotate inverted" ; mode "default"
+    bindsym Left exec "xrandr --output DP2 --rotate left" ; mode "default"
+    bindsym Right exec "xrandr --output DP2 --rotate right" ; mode "default"
 }
 bindcode Mod4+31 mode "$randrmode"
 
