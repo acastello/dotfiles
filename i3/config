@@ -49,7 +49,7 @@ bindsym Mod4+6 exec kill     "$(xdotool getactivewindow getwindowpid)"
 
 # start a terminal
 bindsym Mod5+Return exec tabbed -ps+1 -c -r 2 st -w ''
-bindsym Mod4+Return exec tabbed -ps+1 -c -n _floating_wildcard -g 644x388 -r 2 st -w ''
+bindsym Mod4+Return exec tabbed -ps+1 -c -n _floating_wildcard -r 2 st -w ''
 bindsym Ctrl+Mod4+Return exec konsole
 
 # kill focused window
@@ -639,6 +639,7 @@ bindsym Mod4+w exec "wew norwow"
 # #       xprop | grep -i 'class'
 for_window [title="_floating_wildcard"] floating enable # , move position mouse
 for_window [class="_floating_wildcard"] floating enable # , move position mouse
+for_window [instance="_floating_wildcard"] floating enable # , move position mouse
 for_window [title="_sticky_wildcard"] floating enable
 for_window [title="_sticky_wildcard"] sticky enable
 for_window [class="Xephyr"] floating disable
