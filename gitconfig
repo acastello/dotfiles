@@ -40,6 +40,8 @@
     rebase = true
 [pretty]
     ls = %C(yellow)%h%Creset %<(18,mtrunc)%aN %C(auto)% D %s %C(cyan)%cr
+[receive]
+    denyCurrentBranch = warn
 
 [hub]
 	protocol = https
